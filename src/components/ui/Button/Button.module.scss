@@ -1,0 +1,13 @@
+.button {
+  background: red;
+  color: white;
+  padding: 2em;
+
+  &:hover {
+    background: blue;
+  }
+}
+
+.button--large {
+  padding: 4em;
+}
