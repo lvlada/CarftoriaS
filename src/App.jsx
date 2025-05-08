@@ -1,9 +1,10 @@
-import { Button } from './components/ui/Button/Button';
+import { Button } from './components/';
+import { AppRouter } from './router';
 
 function App() {
   return (
     <div className="center-item">
-      Hello world
+      <AppRouter />
       <Button onClick={() => alert('Hello world!')}>Click me</Button>
     </div>
   );
