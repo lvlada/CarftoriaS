@@ -1,4 +1,5 @@
-import { Container } from './components/ui/Container/Container';
+import { Container } from './components';
+
 import { AppRouter } from './router';
 
 function App() {
