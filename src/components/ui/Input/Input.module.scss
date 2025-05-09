@@ -1,10 +1,10 @@
-@import '../../../styles/variables.scss';
+@use '../../../styles/variables.scss';
 .input {
   width: 100%;
   padding: 0.5em;
   border-radius: 0.5em;
   border: 1px solid #ccc;
-  font-size: $font-size;
+  font-size: variables.$font-size;
 
   &:focus {
     border-color: #007bff;
