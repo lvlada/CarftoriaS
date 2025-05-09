@@ -1,6 +1,9 @@
-@use '../../../styles/mixins.scss';
+@use '@/styles/mixins.scss';
+@use '@/styles/variables.scss';
+
 .container {
   @include mixins.center-item;
   max-width: 76.25em;
   margin: 0 auto;
+  font-family: variables.$font-family;
 }
