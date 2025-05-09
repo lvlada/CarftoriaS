@@ -1,12 +1,11 @@
-import { Button } from './components/';
+import { Container } from './components/ui/Container/Container';
 import { AppRouter } from './router';
 
 function App() {
   return (
-    <div className="center-item">
+    <Container>
       <AppRouter />
-      <Button onClick={() => alert('Hello world!')}>Click me</Button>
-    </div>
+    </Container>
   );
 }
 

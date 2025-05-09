@@ -1,0 +1,6 @@
+@use '../../../styles/mixins.scss';
+.container {
+  @include mixins.center-item;
+  max-width: 76.25em;
+  margin: 0 auto;
+}

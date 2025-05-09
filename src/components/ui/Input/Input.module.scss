@@ -1,0 +1,19 @@
+@import '../../../styles/variables.scss';
+.input {
+  width: 100%;
+  padding: 0.5em;
+  border-radius: 0.5em;
+  border: 1px solid #ccc;
+  font-size: $font-size;
+
+  &:focus {
+    border-color: #007bff;
+    outline: none;
+  }
+  &.error {
+    border-color: red;
+  }
+}
+.icon {
+  padding-inline: 0.5em;
+}

@@ -1,7 +1,1 @@
-@import './styles/variables.scss';
-@import './styles/mixins.scss';
-@import './styles/globals.scss';
-
-.center-item {
-  @include center-item;
-}
+@import './styles/styles.scss';

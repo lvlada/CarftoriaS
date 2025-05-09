@@ -1,8 +1,0 @@
-@use './variables.scss' as vars;
-* {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-  font-size: vars.$font-size;
-  font-family: vars.$font-family;
-}

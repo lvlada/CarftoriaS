@@ -1,0 +1,12 @@
+.select {
+  padding: 2em;
+  color:black &-options {
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+    padding: 1em;
+
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    z-index: 10;
+  }
+}
