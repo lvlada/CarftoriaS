@@ -1,13 +1,25 @@
+@use '@/styles/variables';
+
 .button {
-  background: red;
-  color: white;
-  padding: 2em;
+  padding: 1.03125em 2.65625em;
+  font-weight: 700;
+  font-size: 1.75rem;
+  color: variables.$background-color;
+  background: variables.$primary-color;
+  outline: none;
+  border: none;
+  border-radius: 0.75em;
+  cursor: pointer;
 
-  &:hover {
-    background: blue;
+  &--primary {
+    background: variables.$primary-color;
   }
-}
 
-.button--large {
-  padding: 4em;
+  &--secondary {
+    background: variables.$secondary-color;
+  }
+
+  &--accent {
+    background: variables.$accent-color;
+  }
 }

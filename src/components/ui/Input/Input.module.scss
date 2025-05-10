@@ -1,19 +1,21 @@
-@use '../../../styles/variables.scss';
+@use '@/styles/variables.scss';
 .input {
   width: 100%;
-  padding: 0.5em;
-  border-radius: 0.5em;
-  border: 1px solid #ccc;
-  font-size: variables.$font-size;
+  padding: 1.6525em 1.22375em;
+  border-radius: 0.9375em;
+  border: 0.98px solid variables.$font-color;
+  font-size: 1.46875em;
+  background: variables.$background-color;
 
-  &:focus {
-    border-color: #007bff;
-    outline: none;
+  &:placeholder {
+    color: variables.$ui-color;
   }
+
   &.error {
     border-color: red;
   }
-}
-.icon {
-  padding-inline: 0.5em;
+
+  &__icon {
+    margin-right: 1.46875em;
+  }
 }

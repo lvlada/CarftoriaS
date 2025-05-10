@@ -1,11 +1,14 @@
+@import url('https://googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap');
+
 // colors
-$primary-color: blue;
-$secondary-color: green;
-$font-color: gray;
-$background-color: white;
+$primary-color: #8b5e3c;
+$secondary-color: #6b8e23;
+$accent-color: #d2691e;
+$background-color: #f5f1e6;
+$font-color: #2c2c2c;
+$ui-color: #c4bbaf;
 
 // typography
-$font-size: 16px;
-$font-family: 'Arial, sans-serif';
-
-$border-radius: 1em;
+$font-size-heading: 2.5rem;
+$font-size-paragraph: 2rem;
+$font-family: 'Playfair Display, serif';
