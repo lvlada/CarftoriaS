@@ -1,0 +1,21 @@
+@use '@/styles/variables';
+
+.rating {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.4375em;
+  color: variables.$font-color;
+  font-weight: 600;
+  font-size: 1rem;
+
+  &__comments {
+    font-weight: 700;
+    text-decoration: underline;
+    text-decoration-color: black;
+  }
+
+  &__star:hover {
+    cursor: pointer;
+  }
+}
