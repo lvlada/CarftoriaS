@@ -14,4 +14,8 @@
     text-decoration: underline;
     text-decoration-color: black;
   }
+
+  &__star:hover {
+    cursor: pointer;
+  }
 }

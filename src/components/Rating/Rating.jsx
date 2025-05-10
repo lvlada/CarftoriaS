@@ -1,7 +1,7 @@
 import style from './Rating.module.scss';
 import { IconStar } from '@/assets';
 
-const Rating = ({ rating }) => {
+const Rating = ({ rating, onChangeRating }) => {
   return (
     <div className={style.rating}>
       <span className={style.rating__comments}>Vidi komentare</span>
@@ -11,7 +11,11 @@ const Rating = ({ rating }) => {
           {Array(5)
             .fill()
             .map((_, index) => (
-              <span key={index}>
+              <span
+                className={style.rating__star}
+                key={index}
+                onClick={() => onChangeRating(index + 1)}
+              >
                 <IconStar fill={index < Math.floor(rating)} />
               </span>
             ))}

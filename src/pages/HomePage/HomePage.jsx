@@ -1,10 +1,10 @@
-import { Rating } from '@/components';
+import { RatingContainer } from '@/components/Rating/RatingContainer';
 
 const HomePage = () => {
   return (
     <div>
       home page
-      <Rating rating={4.8} />
+      <RatingContainer />{' '}
     </div>
   );
 };
