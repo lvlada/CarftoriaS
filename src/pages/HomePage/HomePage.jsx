@@ -1,11 +1,9 @@
-import { Button, Input } from '@/components';
+import { HeroSectionContainer } from '@/components/';
 
 const HomePage = () => {
   return (
     <div>
-      home page
-      <Button variant="secondary">Vidi sve</Button>
-      <Input placeholder={'Unesi ime, kategorije, mesto...'} />
+      <HeroSectionContainer />
     </div>
   );
 };
