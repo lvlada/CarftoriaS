@@ -1,12 +1,15 @@
-import { Container } from './components';
+import { Container, HeaderContainer } from './components';
 
 import { AppRouter } from './router';
 
 function App() {
   return (
-    <Container>
-      <AppRouter />
-    </Container>
+    <>
+      <HeaderContainer />
+      <Container>
+        <AppRouter />
+      </Container>
+    </>
   );
 }
 
