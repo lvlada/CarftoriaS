@@ -1,13 +1,7 @@
-import { Container } from './components';
-
-import { AppRouter } from './router';
+import { HomePageLayout } from './layout';
 
 function App() {
-  return (
-    <Container>
-      <AppRouter />
-    </Container>
-  );
+  return <HomePageLayout />;
 }
 
 export default App;
