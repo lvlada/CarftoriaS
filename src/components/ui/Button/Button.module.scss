@@ -1,15 +1,15 @@
 @use '@/styles/variables';
 
 .button {
-  padding: 1.03125em 2.65625em;
+  padding: 0.9375em 3em;
   font-weight: 700;
   font-size: 1.75rem;
   color: variables.$background-color;
-  background: variables.$primary-color;
   outline: none;
   border: none;
   border-radius: 0.75em;
   cursor: pointer;
+  width: fit-content;
 
   &--primary {
     background: variables.$primary-color;

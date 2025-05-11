@@ -1,10 +1,9 @@
-import { RatingContainer } from '@/components/Rating/RatingContainer';
+import { HeroSectionContainer } from '@/components/';
 
 const HomePage = () => {
   return (
     <div>
-      home page
-      <RatingContainer />{' '}
+      <HeroSectionContainer />
     </div>
   );
 };
