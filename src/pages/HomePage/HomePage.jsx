@@ -1,9 +1,10 @@
-import { HeroSectionContainer } from '@/components/';
+import { BannerContainer, HeroSectionContainer } from '@/components/';
 
 const HomePage = () => {
   return (
     <div>
       <HeroSectionContainer />
+      <BannerContainer />
     </div>
   );
 };
