@@ -1,3 +1,5 @@
+@use './variables';
+
 @mixin center-item {
   display: flex;
   justify-content: center;

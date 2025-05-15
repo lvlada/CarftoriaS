@@ -1,4 +1,5 @@
 @use './variables.scss';
+@use './mixins.scss';
 
 *,
 *::after,
@@ -11,4 +12,29 @@
 }
 body {
   background: variables.$background-color;
+}
+
+/* Typography */
+h1 {
+  @include mixins.heading-1;
+}
+
+h2 {
+  @include mixins.heading-2;
+}
+
+h3 {
+  @include mixins.heading-3;
+}
+
+h4 {
+  @include mixins.heading-4;
+}
+
+p {
+  @include mixins.paragraph-text;
+}
+
+.text-small {
+  @include mixins.small-text;
 }

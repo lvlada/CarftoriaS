@@ -1,0 +1,54 @@
+@use './variables.scss';
+
+.h1 {
+  font-family: variables.$font-family;
+  font-weight: 700;
+  font-size: 2.5rem;
+  line-height: 4.6875em;
+  color: variables.$accent-color;
+}
+
+.h2,
+.h3,
+.h4 {
+  font-family: variables.$font-family;
+  font-weight: 700;
+  font-size: 2rem;
+  line-height: 100%;
+  color: variables.$accent-color;
+}
+.p {
+  font-family: variables.$font-family;
+  font-weight: 400;
+  font-size: 1.25rem;
+  line-height: 100%;
+  color: variables.$font-color;
+}
+.cta {
+  font-family: variables.$font-family;
+  font-weight: 700;
+  font-size: 1.25rem;
+  line-height: 100%;
+  color: variables.$accent-color;
+}
+.numbers {
+  font-family: variables.$font-family;
+  font-weight: 700;
+  font-size: 1.5rem;
+  line-height: 100%;
+  color: variables.$font-color;
+}
+.filters {
+  font-family: variables.$font-family;
+  font-weight: 400;
+  font-size: 1.5rem;
+  line-height: 100%;
+  color: variables.$font-color;
+}
+.selection {
+  font-family: variables.$font-family;
+  font-weight: 600;
+  font-size: 1.5rem;
+  line-height: 100%;
+  color: variables.$font-color;
+}
