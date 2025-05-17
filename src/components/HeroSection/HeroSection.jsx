@@ -1,29 +1,14 @@
 import { Button } from '../ui';
 import style from './HeroSection.module.scss';
 
-const HeroSection = ({ imagePosition, image, title, description, link }) => {
+const HeroSection = ({ title, description, link }) => {
   return (
     <section className={style.hero}>
-      {imagePosition === 'left' ? (
-        <div className={style.hero__container}>
-          <img src={image} alt="hero-image" />;
-          <div className={style.hero__content}>
-            <p className={style.hero__title}>{title}</p>
-            <p className={style.hero__text}>{description}</p>
-            <Button>{link}</Button>
-          </div>
-        </div>
-      ) : null}
-      {imagePosition === 'right' ? (
-        <div className={style.hero__container}>
-          <div className={style.hero__content}>
-            <p className={style.hero__title}>{title}</p>
-            <p className={style.hero__text}>{description}</p>
-            <Button>{link}</Button>
-          </div>
-          <img src={image} alt="hero-image" />;
-        </div>
-      ) : null}
+      <div className={style.hero__content}>
+        <h1 className={style.hero__title}>{title}</h1>
+        <p className={style.hero__text}>{description}</p>
+        <Button variant="primary">{link}</Button>
+      </div>
     </section>
   );
 };

@@ -1,24 +1,64 @@
+import {
+  IconArrowDown,
+  IconENFlag,
+  IconGlobus,
+  IconLogo,
+  IconMagnifyingGlass,
+  IconRSFlag
+} from '@/assets';
 import style from './Header.module.scss';
-import { NavLink } from 'react-router';
 
-const Header = ({ navigationLinks }) => {
+import { DropDownContainer } from '../DropDown';
+import { CATEGORIES } from '@/constants';
+
+const Header = ({ selectedLanguage, onLanguageSelect }) => {
+  const languages = [
+    {
+      categoryName: <IconENFlag key="en-flag" />,
+      code: 'en'
+    },
+    {
+      categoryName: <IconRSFlag key="rs-flag" />,
+      code: 'rs'
+    }
+  ];
+
   return (
     <header className={style.header}>
-      <div className={style.header__logo}>logo</div>
+      <IconLogo />
       <nav className={style.navigation}>
         <ul className={style.navigation__list}>
-          {navigationLinks.map((link, index) => (
-            <li key={index} className={style.navigation__list__link}>
-              <NavLink to={link.to} aria-label={link.ariaLabel}>
-                {link.icon && (
-                  <span>
-                    <link.icon />
-                  </span>
-                )}
-                {link.text}
-              </NavLink>
-            </li>
-          ))}
+          <li className={style.navigation__list__link}>
+            <IconMagnifyingGlass />
+            Pretraga
+          </li>
+          <li className={style.navigation__list__link}>
+            <DropDownContainer
+              items={CATEGORIES}
+              label={
+                <>
+                  Kategorije
+                  <IconArrowDown />
+                </>
+              }
+            />
+          </li>
+          <li className={style.navigation__list__link}>Zakaži uslugu</li>
+          <li className={style.navigation__list__link}>Prijava/Registracija</li>
+          <li className={style.navigation__list__link}>
+            <DropDownContainer
+              items={languages}
+              label={
+                <>
+                  <IconGlobus />
+                  <IconArrowDown />
+                </>
+              }
+              variant="flag"
+              selected={selectedLanguage}
+              onSelect={onLanguageSelect}
+            />
+          </li>
         </ul>
       </nav>
     </header>

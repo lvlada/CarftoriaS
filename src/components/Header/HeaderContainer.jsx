@@ -1,15 +1,18 @@
+import { useState } from 'react';
 import { Header } from './Header';
-import { IconMagnifyingGlass } from '@/assets';
 
 const HeaderContainer = () => {
-  const navigationLinks = [
-    { to: '#', ariaLabel: 'pretraga', text: 'Pretraga', icon: IconMagnifyingGlass },
-    { to: '#', ariaLabel: 'kategorije', text: 'Kategorije' },
-    { to: '#', ariaLabel: 'zakaži uslugu', text: 'Zakaži uslugu' },
-    { to: '#', ariaLabel: 'prijava/registracija', text: 'Prijava/Registracija' }
-  ];
+  const [selectedLanguage, setSelectedLanguage] = useState('en'); // Default language is English
 
-  return <Header navigationLinks={navigationLinks} />;
+  const handleLanguageSelect = (selection) => {
+    if (selection && selection.category && selection.category.code) {
+      setSelectedLanguage(selection.category.code);
+      // Here you could also trigger any other actions needed when language changes
+      // such as updating translations, etc.
+    }
+  };
+
+  return <Header selectedLanguage={selectedLanguage} onLanguageSelect={handleLanguageSelect} />;
 };
 
 export { HeaderContainer };

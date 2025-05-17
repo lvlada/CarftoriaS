@@ -1,0 +1,13 @@
+@use '@/styles/typography';
+.crafterCounterItem {
+  display: flex;
+  flex-direction: column;
+  gap: 1.416875em;
+
+  &__number {
+    @extend .numbers;
+  }
+  &__title {
+    @extend .filters;
+  }
+}

@@ -1,0 +1,30 @@
+@use '@/styles/variables';
+@use '@/styles/typography';
+
+.visionSection {
+  display: flex;
+  background-image: url('@/assets/images/Shoe.png');
+  background-size: 61%;
+  background-repeat: no-repeat;
+  align-items: center;
+  justify-content: end;
+  background-color: #dcdbd8;
+  height: 43.8125em;
+
+  &__content {
+    align-self: center;
+    width: 25.875em;
+    display: flex;
+    flex-direction: column;
+    gap: 1.875em;
+    margin-right: 3.9375em;
+    margin-left: 3.75em;
+  }
+
+  &__heading {
+    @extend .h2;
+  }
+  &__description {
+    @extend .p;
+  }
+}
