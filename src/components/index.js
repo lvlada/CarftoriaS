@@ -3,4 +3,5 @@ export * from './Header';
 export * from './Footer';
 export * from './HeroSection';
 export * from './Rating';
+export * from './DropDown';
 export * from './Banner';

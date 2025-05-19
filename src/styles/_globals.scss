@@ -1,4 +1,5 @@
 @use './variables.scss';
+@use './mixins.scss';
 
 *,
 *::after,
@@ -11,4 +12,5 @@
 }
 body {
   background: variables.$background-color;
+  position: relative;
 }

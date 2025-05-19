@@ -1,32 +1,29 @@
 @use '@/styles/variables';
-.hero {
-  margin-top: 4.875em;
-  margin-bottom: 12.8125em;
+@use '@/styles/typography';
 
-  &__container {
-    display: flex;
-    gap: 1.1875em;
-  }
+.hero {
+  position: relative;
+  background-image: url('@/assets/images/HeroBackground.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 85vh;
+  display: flex;
+  align-items: center;
 
   &__content {
+    width: 28.3125em;
+    margin-left: 2.5em;
     display: flex;
     flex-direction: column;
-    gap: 3.75em;
-    padding-top: 5.125em;
-    padding-bottom: 7em;
-    width: 28.3125em;
-    height: 24.125em;
+    gap: 2.28125em;
   }
 
   &__title {
-    font-weight: 700;
-    font-size: variables.$font-size-heading;
-    color: variables.$accent-color;
+    @extend .h1;
   }
 
   &__text {
-    font-size: variables.$font-size-paragraph;
-    color: variables.$font-color;
-    font-weight: 400;
+    @extend .p;
   }
 }

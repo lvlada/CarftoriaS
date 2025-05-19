@@ -1,0 +1,62 @@
+@use '@/styles/variables';
+
+.dropDown {
+  width: fit-content;
+  position: relative;
+
+  &__label {
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 0.5em;
+  }
+
+  &__list {
+    display: flex;
+    flex-direction: column;
+    background-color: variables.$background-color;
+    position: absolute;
+    top: 1.5em;
+    right: 0;
+    width: fit-content;
+    gap: 0.3125em;
+    border-radius: 0.25em;
+    z-index: 10;
+    padding: 0.5em 0;
+
+    &__link {
+      list-style: none;
+      text-decoration: none;
+      font-weight: 400;
+      padding: 0.3125em;
+      transition: all 0.2s ease;
+      cursor: pointer;
+
+      &:hover {
+        font-weight: 700;
+      }
+    }
+  }
+
+  &__category {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  &__sublist {
+    display: flex;
+    flex-direction: column;
+
+    li {
+      padding-left: 2.8125em !important;
+    }
+  }
+}
+.arrow {
+  transform: rotate(0deg);
+  transition: all 0.2s ease;
+  &__active {
+    transform: rotate(180deg);
+  }
+}

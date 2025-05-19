@@ -1,11 +1,14 @@
-import { BannerContainer, HeroSectionContainer } from '@/components/';
+import { HeroSectionContainer, BannerContainer } from '@/components/';
+import { CrafterCounterContainer, VisionSection } from './components';
 
 const HomePage = () => {
   return (
-    <div>
+    <>
       <HeroSectionContainer />
+      <CrafterCounterContainer />
+      <VisionSection />
       <BannerContainer />
-    </div>
+    </>
   );
 };
 
