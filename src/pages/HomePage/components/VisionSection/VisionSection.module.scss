@@ -2,16 +2,19 @@
 @use '@/styles/typography';
 
 .visionSection {
-  display: flex;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
   background-image: url('@/assets/images/Shoe.png');
-  background-size: 61%;
   background-repeat: no-repeat;
+  background-position: left;
   align-items: center;
   justify-content: end;
   background-color: #dcdbd8;
   height: 43.8125em;
+  margin-block: 3.125em;
 
   &__content {
+    grid-column: 3;
     align-self: center;
     width: 25.875em;
     display: flex;

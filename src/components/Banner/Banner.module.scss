@@ -1,5 +1,8 @@
+@use '@/styles/mixins.scss';
+
 .banner {
-  display: flex;
+  @include mixins.container;
+  flex-direction: row;
   justify-content: space-between;
   align-items: center;
 }
