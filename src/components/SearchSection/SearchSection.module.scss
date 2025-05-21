@@ -1,0 +1,20 @@
+@use '@/styles/mixins';
+
+.searchSection {
+  @include mixins.container;
+
+  &__input__container {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    gap: 0.9375em;
+  }
+  &__input {
+    flex: 1 1 auto;
+    border-radius: 0.75em;
+    border: 1px solid #ccc;
+    font-size: 1rem;
+    background-color: #fff;
+    transition: all 0.3s ease-in-out;
+  }
+}
