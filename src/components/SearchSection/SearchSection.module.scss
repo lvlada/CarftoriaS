@@ -1,20 +1,39 @@
 @use '@/styles/mixins';
+@use '@/styles/typography';
 
 .searchSection {
   @include mixins.container;
+  align-items: flex-start;
 
-  &__input__container {
+  &__heading {
+    @extend .h2;
+    margin-bottom: 1.875em;
+  }
+  &__form {
     width: 100%;
-    display: flex;
-    align-items: center;
-    gap: 0.9375em;
+  }
+
+  &__select {
+    &__container {
+      display: flex;
+      align-items: center;
+      gap: 2.5em;
+      margin-bottom: 1.875em;
+    }
   }
   &__input {
-    flex: 1 1 auto;
-    border-radius: 0.75em;
-    border: 1px solid #ccc;
-    font-size: 1rem;
-    background-color: #fff;
-    transition: all 0.3s ease-in-out;
+    &__container {
+      display: flex;
+      align-items: center;
+      justify-content: start;
+      gap: 0.9375em;
+    }
+  }
+
+  &__button {
+    outline: none;
+    border: none;
+    cursor: pointer;
+    background: transparent;
   }
 }
