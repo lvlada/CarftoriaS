@@ -1,4 +1,4 @@
-import { HeroSectionContainer, BannerContainer } from '@/components/';
+import { HeroSectionContainer, BannerContainer, SearchSectionContainer } from '@/components/';
 import { CrafterCounterContainer, VisionSection } from './components';
 
 const HomePage = () => {
@@ -7,6 +7,7 @@ const HomePage = () => {
       <HeroSectionContainer />
       <CrafterCounterContainer />
       <VisionSection />
+      <SearchSectionContainer />
       <BannerContainer />
     </>
   );
