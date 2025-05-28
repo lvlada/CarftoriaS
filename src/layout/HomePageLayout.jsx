@@ -1,4 +1,4 @@
-import { HeaderContainer } from '@/components';
+import { FooterContainer, HeaderContainer } from '@/components';
 import { AppRouter } from '@/router';
 
 const HomePageLayout = () => {
@@ -6,6 +6,7 @@ const HomePageLayout = () => {
     <>
       <HeaderContainer />
       <AppRouter />
+      <FooterContainer />
     </>
   );
 };

@@ -1,3 +1,58 @@
+@use '@/styles/variables';
+@use '@/styles/mixins';
+
 .footer {
   text-align: center;
+  background: variables.$ui-color;
+  padding-top: 0.625em;
+  padding-bottom: 0.375em;
+  font-size: 0.875rem;
+  font-family: variables.$font-mono;
+  color: #000;
+  &__designer {
+    margin-left: 40px;
+  }
+
+  &__links {
+    display: flex;
+    padding-top: 1.75em;
+    padding-bottom: 2.4375em;
+    background: variables.$font-color;
+    color: variables.$background-color;
+    font-size: 0.875rem;
+    font-weight: 500;
+
+    &__container {
+      @include mixins.container;
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: start;
+    }
+    &__column {
+      display: flex;
+      flex-direction: column;
+      align-items: start;
+      gap: 0.9375em;
+    }
+    &__title {
+      color: variables.$accent-color;
+      font-size: 1rem;
+      font-weight: 800;
+    }
+    & ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: flex;
+      flex-direction: column;
+      flex-wrap: wrap;
+      align-items: start;
+      gap: 0.5em;
+    }
+  }
+}
+.logo {
+  background: variables.$background-color;
+  padding: 0;
+  height: fit-content;
 }
