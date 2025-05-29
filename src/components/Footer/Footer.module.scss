@@ -21,7 +21,13 @@
     color: variables.$background-color;
     font-size: 0.875rem;
     font-weight: 500;
-
+    &__categories {
+      display: grid !important;
+      grid-template-columns: repeat(2, 1fr);
+      grid-template-rows: repeat(4, auto);
+      align-items: start;
+      text-align: left;
+    }
     &__container {
       @include mixins.container;
       flex-direction: row;
@@ -48,6 +54,9 @@
       flex-wrap: wrap;
       align-items: start;
       gap: 0.5em;
+    }
+    &__fonts {
+      text-transform: uppercase;
     }
   }
 }

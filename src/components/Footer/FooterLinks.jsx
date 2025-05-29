@@ -36,23 +36,23 @@ const FooterLinks = () => {
           </ul>
         </div>
 
-        <div className={`${style.footer__links__column} ${style.footer__links__categories}`}>
+        <div className={style.footer__links__column}>
           <span className={style.footer__links__title}>Kategorije</span>
-          <ul>
+          <ul className={style.footer__links__categories}>
             <li>Teksit i koža</li>
-            <li>Staklo i Keramika</li>
-            <li>Građevina</li>
-            <li>Hrana i piće</li>
             <li>Tehničke i zanatske instalacije</li>
+            <li>Staklo i Keramika</li>
             <li>Drvo</li>
+            <li>Građevina</li>
             <li>Metal</li>
+            <li>Hrana i piće</li>
             <li>Umetnički zanati</li>
           </ul>
         </div>
 
         <div className={style.footer__links__column}>
           <span className={style.footer__links__title}>Pismo</span>
-          <ul>
+          <ul className={style.footer__links__fonts}>
             <li>latinica</li>
             <li>ћирилица</li>
           </ul>
@@ -62,8 +62,8 @@ const FooterLinks = () => {
             items={languages}
             label={
               <>
-                <IconGlobus />
-                <IconArrowDown />
+                <IconGlobus color="#C4BBAF" />
+                <IconArrowDown color="#C4BBAF" />
               </>
             }
             variant="flag"
