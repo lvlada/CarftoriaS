@@ -10,6 +10,7 @@ import style from './Header.module.scss';
 
 import { DropDownContainer } from '../DropDown';
 import { CATEGORIES } from '@/constants';
+import { Link } from 'react-router';
 
 const Header = ({ selectedLanguage, onLanguageSelect }) => {
   const languages = [
@@ -44,7 +45,9 @@ const Header = ({ selectedLanguage, onLanguageSelect }) => {
             />
           </li>
           <li className={style.navigation__list__link}>Zakaži uslugu</li>
-          <li className={style.navigation__list__link}>Prijava/Registracija</li>
+          <li className={style.navigation__list__link}>
+            <Link to="/login">Prijava/Registracija</Link>
+          </li>
           <li className={style.navigation__list__link}>
             <DropDownContainer
               items={languages}
