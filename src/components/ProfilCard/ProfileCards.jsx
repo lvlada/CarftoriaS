@@ -1,4 +1,6 @@
+import { ProfilCard } from './ProfilCard';
+
 const ProfileCards = () => {
-  return <div>ProfileCards</div>;
+  return <ProfilCard />;
 };
 export { ProfileCards };

@@ -1,0 +1,16 @@
+@use '@/styles/mixins.scss';
+
+.profilcardscontainer {
+  @include mixins.container;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 30px;
+
+  &__image {
+    width: 1.078125em;
+    height: 1.078125em;
+  }
+  p {
+    font-size: 0.75em;
+  }
+}
