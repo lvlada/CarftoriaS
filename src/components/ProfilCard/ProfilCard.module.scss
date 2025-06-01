@@ -1,0 +1,24 @@
+@use '@/styles/mixins.scss';
+
+.profilecard {
+  display: flex;
+  flex-direction: row;
+  width: 73.9375em;
+  height: 21.25em;
+  border: 1px solid #2c2c2c;
+  border-radius: 20px;
+  padding: 1em;
+
+  &__img {
+    width: 16.875em;
+    height: 16.875em;
+  }
+  &__left {
+    width: 16.875em;
+    height: 16.875em;
+  }
+  &__right {
+    width: 16.875em;
+    height: 16.875em;
+  }
+}
