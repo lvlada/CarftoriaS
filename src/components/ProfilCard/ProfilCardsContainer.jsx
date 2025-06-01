@@ -4,17 +4,17 @@ import style from './ProfilCardsContainer.module.scss';
 
 const ProfilCardsContainer = () => {
   return (
-    <section className={style.profilcardscontainer}>
+    <section className={style.profilCardsContainer}>
       <p>
         Sortiraj po oceni{' '}
         <span>
-          <img src={arrows} alt="arrows" className={style.profilcardscontainer__image} />
+          <img src={arrows} alt="arrows" className={style.profilCardsContainer__image} />
         </span>
       </p>
       <p>
         Sortiraj po broju komentara{' '}
         <span>
-          <img src={arrows} alt="arrows" className={style.profilcardscontainer__image} />
+          <img src={arrows} alt="arrows" className={style.profilCardsContainer__image} />
         </span>
       </p>
       <ProfileCards />
