@@ -2,7 +2,7 @@ import style from './Input.module.scss';
 
 const Input = ({ type = 'text', placeholder, value, onChange, id, icon }) => {
   return (
-    <label htmlFor={id}>
+    <label htmlFor={id} className={style.label}>
       {icon && <span className={style.icon}>{icon}</span>}
       <input
         id={id}

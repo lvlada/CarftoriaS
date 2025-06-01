@@ -1,21 +1,32 @@
 @use '@/styles/variables.scss';
 .input {
+  position: relative;
+  inset: 0;
   width: 100%;
-  padding: 1.6525em 1.22375em;
+  padding: 1.22375em 1.46875em;
   border-radius: 0.9375em;
   border: 0.98px solid variables.$font-color;
-  font-size: 1.46875em;
+  font-size: 1.25rem;
   background: variables.$background-color;
-
+  text-indent: 2.5em;
   &:placeholder {
     color: variables.$ui-color;
+    padding-left: 2em;
   }
 
   &.error {
     border-color: red;
   }
-
-  &__icon {
-    margin-right: 1.46875em;
-  }
+}
+.icon {
+  position: absolute;
+  z-index: 1;
+  top: 50%;
+  left: 1.46875em;
+  transform: translateY(-50%);
+}
+.label {
+  position: relative;
+  display: inline-block;
+  width: 100%;
 }
