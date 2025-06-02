@@ -9,9 +9,8 @@ const HomePage = () => {
       <CrafterCounterContainer />
       <VisionSection />
 
-
-     <SearchSectionContainer />
-    <ProfilCardsContainer />
+      <SearchSectionContainer />
+      <ProfilCardsContainer />
 
       <BannerContainer />
     </>

@@ -9,3 +9,4 @@ export * from './IconProfile';
 export * from './IconSearch';
 export * from './IconArrowRight';
 export * from './IconSelectDropDown';
+export * from './IconArrowUp';

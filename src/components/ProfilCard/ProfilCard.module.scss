@@ -1,24 +1,65 @@
 @use '@/styles/mixins.scss';
+@use '@/styles/variables.scss';
 
-.profilecard {
-  display: flex;
-  flex-direction: row;
+.container {
   width: 73.9375em;
-  height: 21.25em;
   border: 1px solid #2c2c2c;
   border-radius: 20px;
-  padding: 1em;
+  padding: 2em;
+  margin-top: 0.625em;
+}
+.profileCard {
+  display: flex;
+  flex-direction: row;
+
+  button {
+    width: 220px;
+  }
 
   &__img {
     width: 16.875em;
-    height: 16.875em;
+    height: 16.25em;
+    background-color: #d9d9d9e3;
+    margin-right: 0.9375em;
   }
   &__left {
-    width: 16.875em;
-    height: 16.875em;
+    width: 50%;
+
+    &__title {
+      color: variables.$accent-color;
+      font-size: 1.5rem;
+      font-weight: 700;
+      margin-bottom: 0.625em;
+    }
+    &__comments {
+      margin-top: 5em;
+    }
   }
   &__right {
     width: 16.875em;
     height: 16.875em;
+
+    ul {
+      margin-left: 1.25em;
+      margin-bottom: 1.625em;
+    }
+  }
+}
+
+.profileCard__collapsible {
+  margin-top: 1em;
+  background-color: #f8f8f8;
+  padding: 1em;
+  border-radius: 8px;
+}
+
+.profileCard__toggle {
+  margin-top: 1em;
+  color: variables.$primary-color;
+  text-align: center;
+  width: 12%;
+  margin: 0 auto;
+  p {
+    cursor: pointer;
   }
 }
