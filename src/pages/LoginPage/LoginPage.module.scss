@@ -1,7 +1,7 @@
 @use '@/styles/mixins.scss';
 .loginPage {
   @include mixins.center-item;
-  height: 95vh;
+  min-height: 96.8vh;
   position: relative;
 }
 .loginPage::before {

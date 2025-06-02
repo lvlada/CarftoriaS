@@ -4,17 +4,32 @@
 
 .loginForm {
   &__container {
-    padding: 1em 2em;
+    padding-top: 2.8125em;
+    padding-inline: 2.8125em;
+    padding-bottom: 3.1875em;
     @include mixins.container;
-    gap: 2.8125em;
-    z-index: 1;
+    gap: 1.25em;
     width: 25.75em;
     background: variables.$background-color;
     border: 1px solid variables.$secondary-color;
     border-radius: 0.9375em;
+    p {
+      font-weight: 700;
+      color: variables.$font-color;
+      width: 100%;
+      text-align: left;
+    }
   }
   &__title {
-    @extend .h1;
+    @extend .h2;
+    text-align: left;
+    width: 100%;
+  }
+  &__subTitle {
+    text-align: left;
+    width: 100%;
+    font-weight: 700;
+    color: variables.$font-color;
   }
   &__inputs {
     @include mixins.container;
@@ -22,6 +37,23 @@
   }
   &__btn {
     color: variables.$font-color;
+  }
+  &__forgotPassword {
+    margin-top: 0.625em;
+    color: variables.$font-color;
+    font-weight: 700;
+    font-size: 0.875rem;
+    text-align: right;
+    width: 100%;
+  }
+  &__continueText {
+    width: 100%;
+    text-align: left;
+  }
+  &__register {
+    color: variables.$accent-color;
+    font-size: 1rem;
+    font-weight: 600;
   }
 }
 .input {

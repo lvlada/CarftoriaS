@@ -1,11 +1,13 @@
 import { FooterContainer, HeaderContainer } from '@/components';
-import { AppRouter } from '@/router';
+import { Outlet } from 'react-router';
 
 const HomePageLayout = () => {
   return (
     <>
       <HeaderContainer />
-      <AppRouter />
+      <main>
+        <Outlet />
+      </main>
       <FooterContainer />
     </>
   );

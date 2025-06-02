@@ -1,11 +1,13 @@
 import { Footer, HeaderContainer } from '@/components';
-import { LoginPageContainer } from '@/pages';
+import { Outlet } from 'react-router';
 
 const LoginPageLayout = () => {
   return (
     <>
       <HeaderContainer />
-      <LoginPageContainer />
+      <main>
+        <Outlet />
+      </main>
       <Footer />
     </>
   );
