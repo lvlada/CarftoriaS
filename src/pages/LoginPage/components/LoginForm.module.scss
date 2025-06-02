@@ -1,0 +1,29 @@
+@use '@/styles/variables';
+@use '@/styles/mixins';
+@use '@/styles/typography';
+
+.loginForm {
+  &__container {
+    padding: 1em 2em;
+    @include mixins.container;
+    gap: 2.8125em;
+    z-index: 1;
+    width: 25.75em;
+    background: variables.$background-color;
+    border: 1px solid variables.$secondary-color;
+    border-radius: 0.9375em;
+  }
+  &__title {
+    @extend .h1;
+  }
+  &__inputs {
+    @include mixins.container;
+    gap: 0.625em;
+  }
+  &__btn {
+    color: variables.$font-color;
+  }
+}
+.input {
+  text-indent: 0;
+}

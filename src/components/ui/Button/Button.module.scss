@@ -22,4 +22,8 @@
   &--accent {
     background: variables.$accent-color;
   }
+  &--outline {
+    background: transparent;
+    border: 1px solid variables.$primary-color;
+  }
 }
