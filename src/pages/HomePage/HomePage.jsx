@@ -1,5 +1,6 @@
 import { HeroSectionContainer, BannerContainer, SearchSectionContainer } from '@/components/';
 import { CrafterCounterContainer, VisionSection } from './components';
+import { ProfilCardsContainer } from '@/components/ProfilCard/ProfilCardsContainer';
 
 const HomePage = () => {
   return (
@@ -7,7 +8,10 @@ const HomePage = () => {
       <HeroSectionContainer />
       <CrafterCounterContainer />
       <VisionSection />
+
       <SearchSectionContainer />
+      <ProfilCardsContainer />
+
       <BannerContainer />
     </>
   );
