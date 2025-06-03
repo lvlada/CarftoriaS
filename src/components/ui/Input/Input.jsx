@@ -1,6 +1,6 @@
 import style from './Input.module.scss';
 
-const Input = ({ type = 'text', placeholder, value, onChange, id, icon }) => {
+const Input = ({ type = 'text', placeholder, value, onChange, id, icon, className }) => {
   return (
     <label htmlFor={id} className={style.label}>
       {icon && <span className={style.icon}>{icon}</span>}
@@ -10,7 +10,7 @@ const Input = ({ type = 'text', placeholder, value, onChange, id, icon }) => {
         placeholder={placeholder}
         value={value}
         onChange={onChange}
-        className={style.input}
+        className={`${style.input} ${className}`}
       />
     </label>
   );

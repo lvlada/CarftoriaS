@@ -6,6 +6,7 @@ export * from './IconGlobus';
 export * from './IconENFlag';
 export * from './IconRSFlag';
 export * from './IconProfile';
+export * from './IconGoogle';
 export * from './IconSearch';
 export * from './IconArrowRight';
 export * from './IconSelectDropDown';

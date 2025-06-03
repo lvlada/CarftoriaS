@@ -17,7 +17,7 @@ const CATEGORIES = [
   },
   {
     categoryName: 'građevina',
-    subCategories: ['zidari', 'tesari', 'moleri', 'keramičari', 'fasaderi', 'izolateri']
+    subCategories: ['zidari', 'moleri', 'fasaderi', 'izolateri']
   },
   {
     categoryName: 'hrana i piće',
@@ -25,7 +25,7 @@ const CATEGORIES = [
   },
   {
     categoryName: 'tehničke i zanatske instalacije',
-    subCategories: ['električari', 'vodoinstalateri', 'grejači', 'klima majstori', 'mlekari']
+    subCategories: ['električari', 'vodoinstalateri', 'grejači', 'klima majstori']
   },
   {
     categoryName: 'umetnički zanati',

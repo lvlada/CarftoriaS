@@ -1,0 +1,15 @@
+@use '@/styles/mixins.scss';
+.loginPage {
+  @include mixins.center-item;
+  min-height: 96.8vh;
+  position: relative;
+}
+.loginPage::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: url('@/assets/images/HeroBackground.png');
+  filter: blur(70px);
+  background-size: cover;
+  background-position: center;
+}
