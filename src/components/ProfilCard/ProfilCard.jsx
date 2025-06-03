@@ -4,7 +4,7 @@ import { Button } from '@/components/ui/Button/Button';
 import { IconStar } from '@/assets';
 import { IconArrowDown, IconArrowUp } from '@/assets';
 
-const ProfilCard = () => {
+const ProfilCard = ({ user }) => {
   const [open, setOpen] = useState(false);
   return (
     <section className={style.container}>
@@ -14,9 +14,9 @@ const ProfilCard = () => {
         </div>
         <div className={style.profileCard__left}>
           <div>
-            <p className={style.profileCard__left__title}>Ime i prezime</p>
-            <p>Zanat</p>
-            <p>Lokacija</p>
+            <p className={style.profileCard__left__title}>{user.fullName}</p>
+            <p>{user.description}</p>
+            <p>{user.city}</p>
           </div>
           <div className={style.profileCard__left__comments}>
             <p>
@@ -29,9 +29,9 @@ const ProfilCard = () => {
         <div className={style.profileCard__right}>
           <p className={style.profileCard__left__title}>Liste usluga </p>
           <ul>
-            <li>usluga 1</li>
-            <li>usluga 2</li>
-            <li>usluga 3</li>
+            {user.services.map((item) => (
+              <li key={item.id}>{item.serviceName}</li>
+            ))}
           </ul>
           <Button variant="secondary">Zakaži uslugu</Button>
         </div>

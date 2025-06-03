@@ -7,7 +7,7 @@ export const usersList = [
     city: 'Beograd',
     phone: '651231234',
     isCraftman: true,
-    description: 'Ja sam novi elektricar',
+    description: 'Elektricar',
     experience: 12,
     avgRating: 4.25,
     comments: [
