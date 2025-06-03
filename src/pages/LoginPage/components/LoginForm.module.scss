@@ -13,7 +13,7 @@
     background: variables.$background-color;
     border: 1px solid variables.$secondary-color;
     border-radius: 0.9375em;
-    p {
+    p:not(:first-of-type) {
       font-weight: 700;
       color: variables.$font-color;
       width: 100%;
@@ -28,7 +28,7 @@
   &__subTitle {
     text-align: left;
     width: 100%;
-    font-weight: 700;
+    font-weight: 400;
     color: variables.$font-color;
   }
   &__inputs {
