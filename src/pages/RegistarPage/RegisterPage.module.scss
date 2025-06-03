@@ -1,0 +1,7 @@
+@use '@/styles/mixins.scss';
+
+.registerPage {
+  @include mixins.center-item;
+  min-height: 97.6vh;
+  position: relative;
+}
