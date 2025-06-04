@@ -4,7 +4,7 @@ import style from './ProfilCardsContainer.module.scss';
 
 const ProfilCardsContainer = () => {
   return (
-    <section className={style.profilCardsContainer}>
+    <section className={style.profilCardsContainer} id="profile-cards">
       <p>
         Sortiraj po oceni{' '}
         <span>

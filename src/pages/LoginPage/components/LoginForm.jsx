@@ -42,7 +42,7 @@ const LoginForm = ({ email, password, onEmailChange, onPasswordChange, login, go
       <p>
         Nemate nalog?{' '}
         <span>
-          <Link to="/register" className={style.loginForm__register}>
+          <Link to="/signup" className={style.loginForm__register}>
             Kreirajte novi nalog.
           </Link>
         </span>

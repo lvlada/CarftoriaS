@@ -10,7 +10,7 @@ const SearchSection = () => {
   const [searchItem, setSearchItem] = useState('');
 
   return (
-    <section className={style.searchSection}>
+    <section className={style.searchSection} id="search-section">
       <h2 className={style.searchSection__heading}>Pretraži zanatlije po:</h2>
       <form className={style.searchSection__form}>
         <div className={style.searchSection__select__container}>

@@ -2,14 +2,12 @@ import { IconArrowDown, IconENFlag, IconGlobus, IconLogo, IconRSFlag } from '@/a
 import { DropDownContainer } from '../DropDown';
 import { useState } from 'react';
 import style from './Footer.module.scss';
+import { Link } from 'react-router';
 const FooterLinks = () => {
-  const [selectedLanguage, setSelectedLanguage] = useState('en'); // Default language is English
-
+  const [selectedLanguage, setSelectedLanguage] = useState('en');
   const handleLanguageSelect = (selection) => {
     if (selection && selection.category && selection.category.code) {
       setSelectedLanguage(selection.category.code);
-      // Here you could also trigger any other actions needed when language changes
-      // such as updating translations, etc.
     }
   };
   const languages = [
@@ -29,10 +27,18 @@ const FooterLinks = () => {
         <div className={style.footer__links__column}>
           <span className={style.footer__links__title}>Prečice</span>
           <ul>
-            <li>Pretraga</li>
-            <li>Kategorije</li>
-            <li>Zakazi uslugu</li>
-            <li>Prijava/Registracija</li>
+            <li>
+              <a href="#search-section">Pretraga</a>
+            </li>
+            <li>
+              <a href="#profile-cards">Kategorije</a>
+            </li>
+            <li>
+              <a href="#profile-cards">Zakazi uslugu</a>
+            </li>
+            <li>
+              <Link to="/login">Prijava/Registracija</Link>
+            </li>
           </ul>
         </div>
 

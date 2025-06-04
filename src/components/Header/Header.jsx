@@ -30,8 +30,10 @@ const Header = ({ selectedLanguage, onLanguageSelect }) => {
       <nav className={style.navigation}>
         <ul className={style.navigation__list}>
           <li className={style.navigation__list__link}>
-            <IconMagnifyingGlass />
-            Pretraga
+            <a href="#search-section">
+              <IconMagnifyingGlass />
+              Pretraga
+            </a>
           </li>
           <li className={style.navigation__list__link}>
             <DropDownContainer
