@@ -1,6 +1,7 @@
 import { ProfileCards } from './ProfileCards';
 import arrows from '@/assets/images/arrows.png';
 import style from './ProfilCardsContainer.module.scss';
+import { usersList } from '@/fake_data/usersList';
 
 const ProfilCardsContainer = () => {
   return (
@@ -17,7 +18,7 @@ const ProfilCardsContainer = () => {
           <img src={arrows} alt="arrows" className={style.profilCardsContainer__image} />
         </span>
       </p>
-      <ProfileCards />
+      <ProfileCards users={usersList} />
       <p>PAGINACIJA</p>
     </section>
   );

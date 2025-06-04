@@ -1,11 +1,12 @@
 import { useState } from 'react';
 import style from './ProfilCard.module.scss';
 import { Button } from '@/components/ui/Button/Button';
-import { IconStar } from '@/assets';
 import { IconArrowDown, IconArrowUp } from '@/assets';
+import { renderStars } from '@/utils/renderStars';
 
 const ProfilCard = ({ user }) => {
   const [open, setOpen] = useState(false);
+
   return (
     <section className={style.container}>
       <div className={style.profileCard}>
@@ -20,10 +21,10 @@ const ProfilCard = ({ user }) => {
           </div>
           <div className={style.profileCard__left__comments}>
             <p>
-              <u>Vidi komentare (11)</u>
+              <u>Vidi komentare ({user.comments.length})</u>
             </p>
-            <p>Prosečna ocena: 1.2/5</p>
-            <IconStar />
+            <p>Prosečna ocena: {user.avgRating}/5</p>
+            <div className={style.starsRow}>{renderStars(user.avgRating)}</div>
           </div>
         </div>
         <div className={style.profileCard__right}>
@@ -36,7 +37,13 @@ const ProfilCard = ({ user }) => {
           <Button variant="secondary">Zakaži uslugu</Button>
         </div>
       </div>
-
+      {open && (
+        <div className={style.profilecard__collapsible}>
+          {user.images.map((item) => (
+            <img key={item} src={item} className={style.profilecard__collapsible_img} />
+          ))}
+        </div>
+      )}
       <div className={style.profileCard__toggle}>
         <p onClick={() => setOpen(!open)}>
           Prikaži više{' '}
@@ -47,16 +54,6 @@ const ProfilCard = ({ user }) => {
           )}
         </p>
       </div>
-
-      {open && (
-        <div className={style.profilecard__collapsible}>
-          <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Non consequuntur perspiciatis
-            molestias ad aut iusto ut aliquid quibusdam qui autem obcaecati, quasi earum consequatur
-            laudantium esse quae velit placeat vitae!
-          </p>
-        </div>
-      )}
     </section>
   );
 };

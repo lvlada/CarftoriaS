@@ -1,10 +1,9 @@
 import { ProfilCard } from './ProfilCard';
-import { usersList } from '@/fake_data/usersList';
 
-const ProfileCards = () => {
+const ProfileCards = ({ users }) => {
   return (
     <>
-      {usersList.map((user) => (
+      {users.map((user) => (
         <ProfilCard key={user.id} user={user} />
       ))}
     </>
