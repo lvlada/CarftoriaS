@@ -46,7 +46,8 @@ const ProfilCard = ({ user }) => {
       )}
       <div className={style.profileCard__toggle}>
         <p onClick={() => setOpen(!open)}>
-          Prikaži više{' '}
+          {open ? 'Prikazi manje' : 'Prikazi vise'}
+
           {open ? (
             <IconArrowUp width="28" height="28" className={style.arrowIcon} />
           ) : (

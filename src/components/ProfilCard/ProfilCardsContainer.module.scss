@@ -10,5 +10,15 @@
   &__image {
     width: 1.078125em;
     height: 1.078125em;
+    cursor: pointer;
   }
+  &__pagination {
+    text-align: center;
+    margin: 1.25em;
+  }
+}
+
+.paginationArrow {
+  margin: 1.5em;
+  vertical-align: middle;
 }
