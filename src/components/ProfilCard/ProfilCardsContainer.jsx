@@ -4,24 +4,19 @@ import arrows from '@/assets/images/arrows.png';
 import style from './ProfilCardsContainer.module.scss';
 import { usersList } from '@/fake_data/usersList';
 import { IconArrowRightSolid, IconArrowLeftSolid } from '@/assets/icons';
+import { sortUsersByRating, sortUsersByComments } from '@/utils';
 
 const ProfilCardsContainer = () => {
   const [newList, setNewList] = useState(usersList);
   const [ratingAsc, setRatingAsc] = useState(true);
 
   const fileterByRating = () => {
-    const sortedList = [...newList].sort((a, b) =>
-      ratingAsc ? a.avgRating - b.avgRating : b.avgRating - a.avgRating
-    );
-    setNewList(sortedList);
+    setNewList(sortUsersByRating(newList, ratingAsc));
     setRatingAsc(!ratingAsc);
   };
 
   const filterByComments = () => {
-    const sortedList = [...newList].sort((a, b) =>
-      ratingAsc ? a.comments.length - b.comments.length : b.comments.length - a.comments.length
-    );
-    setNewList(sortedList);
+    setNewList(sortUsersByComments(newList, ratingAsc));
     setRatingAsc(!ratingAsc);
   };
 
