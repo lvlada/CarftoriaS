@@ -1,0 +1,50 @@
+@use '@/styles/variables.scss';
+
+.bookingPage {
+  width: 100%;
+  padding: 2em;
+  margin-top: 0.625em;
+  border: 1px solid #2c2c2c;
+  border-radius: 20px;
+  align-items: center;
+}
+.profileCard {
+  display: flex;
+  flex-direction: row;
+
+  button {
+    width: 220px;
+    //ne prikazuje isto sa 13.75em;
+  }
+
+  &__img {
+    width: 16.875em;
+    height: 16.25em;
+    background-color: #d9d9d9e3;
+    margin-right: 0.9375em;
+  }
+  &__left {
+    width: 50%;
+
+    &__title {
+      color: variables.$accent-color;
+      font-size: 1.5rem;
+      font-weight: 700;
+      margin-bottom: 0.625em;
+    }
+  }
+  &__right {
+    width: 16.875em;
+    height: 16.875em;
+
+    ul {
+      margin-left: 1.25em;
+      margin-bottom: 1.625em;
+    }
+  }
+}
+
+.starsRow {
+  display: flex;
+  margin-bottom: 0.5em;
+}

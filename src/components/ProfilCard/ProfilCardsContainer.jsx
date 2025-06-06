@@ -1,14 +1,28 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { ProfileCards } from './ProfileCards';
 import arrows from '@/assets/images/arrows.png';
 import style from './ProfilCardsContainer.module.scss';
-import { usersList } from '@/fake_data/usersList';
 import { IconArrowRightSolid, IconArrowLeftSolid } from '@/assets/icons';
 import { sortUsersByRating, sortUsersByComments } from '@/utils';
+import { getAllCraftsmen } from '@/services/api.js';
+import { useQuery } from '@tanstack/react-query';
 
 const ProfilCardsContainer = () => {
-  const [newList, setNewList] = useState(usersList);
+  const [newList, setNewList] = useState([]);
   const [ratingAsc, setRatingAsc] = useState(true);
+
+  const { data, isLoading } = useQuery({
+    queryKey: ['craftmens'],
+    queryFn: getAllCraftsmen
+  });
+
+  useEffect(() => {
+    if (data && Array.isArray(data)) {
+      setNewList(data);
+    } else if (data && Array.isArray(data.craftmens)) {
+      setNewList(data.craftmens);
+    }
+  }, [data]);
 
   const fileterByRating = () => {
     setNewList(sortUsersByRating(newList, ratingAsc));
@@ -19,6 +33,8 @@ const ProfilCardsContainer = () => {
     setNewList(sortUsersByComments(newList, ratingAsc));
     setRatingAsc(!ratingAsc);
   };
+
+  if (isLoading) return <div>Loading....</div>;
 
   return (
     <section className={style.profilCardsContainer}>
