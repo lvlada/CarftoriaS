@@ -14,6 +14,7 @@
 
   button {
     width: 220px;
+    //ne prikazuje isto sa 13.75em;
   }
 
   &__img {
@@ -51,6 +52,8 @@
   background-color: #f8f8f8;
   padding: 1em;
   border-radius: 8px;
+  display: flex;
+  gap: 2em;
 }
 
 .profileCard__toggle {
@@ -62,4 +65,15 @@
   p {
     cursor: pointer;
   }
+}
+.starsRow {
+  display: flex;
+  margin-bottom: 0.5em;
+}
+.profilecard__collapsible_img {
+  width: 16.75em;
+  height: 14.0625em;
+  object-fit: cover;
+  margin-right: 10px;
+  margin-top: 30px;
 }
