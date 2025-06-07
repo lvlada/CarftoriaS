@@ -1,15 +1,6 @@
 @use '@/styles/mixins.scss';
 .loginPage {
   @include mixins.center-item;
+  @include mixins.blurred-background('@/assets/images/HeroBackground.png', 70px);
   min-height: 97.6vh;
-  position: relative;
-}
-.loginPage::before {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background-image: url('@/assets/images/HeroBackground.png');
-  filter: blur(70px);
-  background-size: cover;
-  background-position: center;
 }

@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { useNavigate } from 'react-router';
 import { LoginForm } from './LoginForm';
+import { login } from '@/api';
 
 const LoginFormContainer = () => {
   const [email, setEmail] = useState('');
@@ -20,8 +21,7 @@ const LoginFormContainer = () => {
     e.preventDefault();
 
     try {
-      await new Promise((resolve) => setTimeout(resolve, 1000));
-
+      login(email, password);
       console.log('Login successful for:', email);
 
       navigate('/');

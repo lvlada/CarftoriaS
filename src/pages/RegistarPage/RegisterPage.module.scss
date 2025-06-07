@@ -1,7 +1,45 @@
 @use '@/styles/mixins.scss';
-
+@use '@/styles/typography.scss';
+@use '@/styles/variables.scss';
 .registerPage {
   @include mixins.center-item;
+  @include mixins.blurred-background('@/assets/images/HeroBackground.png', 70px);
   min-height: 97.6vh;
-  position: relative;
+  flex-direction: column;
+  &__wrapper {
+    padding: 2.625em;
+    border: 1px solid variables.$secondary-color;
+    background: variables.$background-color;
+    width: 25.75em;
+    border-radius: 0.9375em;
+  }
+  &__title {
+    @extend .h2;
+    margin-bottom: 0.625em;
+  }
+  &__subTitle {
+    font-size: 1rem;
+    color: variables.$font-color;
+    line-height: 1.25rem;
+    margin-bottom: 2.625em;
+  }
+  & p:not(:first-of-type) {
+    font-weight: 700;
+    font-size: 0.875rem;
+  }
+  &__continue {
+    margin-bottom: 0.625em;
+    margin-top: 2.8125em;
+  }
+  &__btn {
+    color: variables.$font-color;
+    margin-bottom: 1.25em;
+    gap: 0.3125em;
+    display: flex;
+    justify-content: center;
+  }
+  &__login {
+    color: variables.$accent-color;
+    font-weight: 600;
+  }
 }

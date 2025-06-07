@@ -4,6 +4,7 @@ import {
   IconGlobus,
   IconLogo,
   IconMagnifyingGlass,
+  IconProfile,
   IconRSFlag
 } from '@/assets';
 import style from './Header.module.scss';
@@ -12,7 +13,7 @@ import { DropDownContainer } from '../DropDown';
 import { CATEGORIES } from '@/constants';
 import { Link } from 'react-router';
 
-const Header = ({ selectedLanguage, onLanguageSelect }) => {
+const Header = ({ selectedLanguage, onLanguageSelect, links, isLoggedIn }) => {
   const languages = [
     {
       categoryName: <IconENFlag key="en-flag" />,
@@ -26,44 +27,71 @@ const Header = ({ selectedLanguage, onLanguageSelect }) => {
 
   return (
     <header className={style.header}>
-      <IconLogo />
+      <Link to="/">
+        <IconLogo />
+      </Link>
       <nav className={style.navigation}>
         <ul className={style.navigation__list}>
-          <li className={style.navigation__list__link}>
-            <a href="#search-section">
-              <IconMagnifyingGlass />
-              Pretraga
-            </a>
-          </li>
-          <li className={style.navigation__list__link}>
-            <DropDownContainer
-              items={CATEGORIES}
-              label={
-                <>
-                  Kategorije
-                  <IconArrowDown />
-                </>
-              }
-            />
-          </li>
-          <li className={style.navigation__list__link}>Zakaži uslugu</li>
-          <li className={style.navigation__list__link}>
-            <Link to="/login">Prijava/Registracija</Link>
-          </li>
-          <li className={style.navigation__list__link}>
-            <DropDownContainer
-              items={languages}
-              label={
-                <>
-                  <IconGlobus />
-                  <IconArrowDown />
-                </>
-              }
-              variant="flag"
-              selected={selectedLanguage}
-              onSelect={onLanguageSelect}
-            />
-          </li>
+          {links ? (
+            <>
+              <li className={style.navigation__list__link}>
+                <a href="#search-section">
+                  <IconMagnifyingGlass />
+                  Pretraga
+                </a>
+              </li>
+              <li className={style.navigation__list__link}>
+                <DropDownContainer
+                  items={CATEGORIES}
+                  label={
+                    <>
+                      Kategorije
+                      <IconArrowDown />
+                    </>
+                  }
+                />
+              </li>
+              <li className={style.navigation__list__link}>Zakaži uslugu</li>
+              <li className={style.navigation__list__link}>
+                {isLoggedIn ? (
+                  <Link to="/profile">
+                    <IconProfile /> Profil
+                  </Link>
+                ) : (
+                  <Link to="/login">Prijava/Registracija</Link>
+                )}
+              </li>
+              <li className={style.navigation__list__link}>
+                <DropDownContainer
+                  items={languages}
+                  label={
+                    <>
+                      <IconGlobus />
+                      <IconArrowDown />
+                    </>
+                  }
+                  variant="flag"
+                  selected={selectedLanguage}
+                  onSelect={onLanguageSelect}
+                />
+              </li>
+            </>
+          ) : (
+            <li className={style.navigation__list__link}>
+              <DropDownContainer
+                items={languages}
+                label={
+                  <>
+                    <IconGlobus />
+                    <IconArrowDown />
+                  </>
+                }
+                variant="flag"
+                selected={selectedLanguage}
+                onSelect={onLanguageSelect}
+              />
+            </li>
+          )}
         </ul>
       </nav>
     </header>
