@@ -1,11 +1,19 @@
 import { useState } from 'react';
 import style from './ProfilCard.module.scss';
 import { Button } from '@/components/ui/Button/Button';
-import { IconStar } from '@/assets';
 import { IconArrowDown, IconArrowUp } from '@/assets';
+import { renderStars } from '@/utils/renderStars';
+import { useNavigate } from 'react-router';
 
 const ProfilCard = ({ user }) => {
   const [open, setOpen] = useState(false);
+
+  const navigate = useNavigate();
+
+  function handleProfile(id) {
+    navigate(`/booking/${id}`);
+  }
+
   return (
     <section className={style.container}>
       <div className={style.profileCard}>
@@ -20,10 +28,10 @@ const ProfilCard = ({ user }) => {
           </div>
           <div className={style.profileCard__left__comments}>
             <p>
-              <u>Vidi komentare (11)</u>
+              <u>Vidi komentare ({user.comments.length})</u>
             </p>
-            <p>Prosečna ocena: 1.2/5</p>
-            <IconStar />
+            <p>Prosečna ocena: {user.avgRating}/5</p>
+            <div className={style.starsRow}>{renderStars(user.avgRating)}</div>
           </div>
         </div>
         <div className={style.profileCard__right}>
@@ -33,13 +41,22 @@ const ProfilCard = ({ user }) => {
               <li key={item.id}>{item.serviceName}</li>
             ))}
           </ul>
-          <Button variant="secondary">Zakaži uslugu</Button>
+          <Button variant="secondary" onClick={() => handleProfile(user.id)}>
+            Zakaži uslugu
+          </Button>
         </div>
       </div>
-
+      {open && (
+        <div className={style.profilecard__collapsible}>
+          {user.images.map((item) => (
+            <img key={item} src={item} className={style.profilecard__collapsible_img} />
+          ))}
+        </div>
+      )}
       <div className={style.profileCard__toggle}>
         <p onClick={() => setOpen(!open)}>
-          Prikaži više{' '}
+          {open ? 'Prikazi manje' : 'Prikazi vise'}
+
           {open ? (
             <IconArrowUp width="28" height="28" className={style.arrowIcon} />
           ) : (
@@ -47,16 +64,6 @@ const ProfilCard = ({ user }) => {
           )}
         </p>
       </div>
-
-      {open && (
-        <div className={style.profilecard__collapsible}>
-          <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Non consequuntur perspiciatis
-            molestias ad aut iusto ut aliquid quibusdam qui autem obcaecati, quasi earum consequatur
-            laudantium esse quae velit placeat vitae!
-          </p>
-        </div>
-      )}
     </section>
   );
 };

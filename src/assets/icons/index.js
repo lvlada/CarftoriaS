@@ -11,3 +11,5 @@ export * from './IconSearch';
 export * from './IconArrowRight';
 export * from './IconSelectDropDown';
 export * from './IconArrowUp';
+export * from './IconArrowRightSolid';
+export * from './IconArrowLeftSolid';

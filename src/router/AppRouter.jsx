@@ -1,7 +1,6 @@
-import { HomePageLayout, LoginPageLayout } from '@/layout';
-import { RegistarPageLayout } from '@/layout/RegisterPageLayout';
-import { HomePage, LoginPageContainer } from '@/pages';
-import { RegisterPageContainer } from '@/pages/RegistarPage/RegisterPageContainer';
+import { HomePageLayout, LoginPageLayout, BookingPageLayout, RegistarPageLayout } from '@/layout';
+import { HomePage, LoginPageContainer, BookingPageContainer, RegisterPageContainer } from '@/pages';
+
 import { Routes, Route } from 'react-router';
 
 const AppRouter = () => {
@@ -15,6 +14,9 @@ const AppRouter = () => {
       </Route>
       <Route element={<RegistarPageLayout />}>
         <Route path="/signup" element={<RegisterPageContainer />} />
+      </Route>
+      <Route element={<BookingPageLayout />}>
+        <Route path="/booking/:id" element={<BookingPageContainer />} />
       </Route>
     </Routes>
   );
