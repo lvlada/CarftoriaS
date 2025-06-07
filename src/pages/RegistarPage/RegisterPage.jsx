@@ -1,5 +1,5 @@
 import { Button } from '@/components';
-import { RegisterForm } from './components';
+import { RegisterFormContainer } from './components';
 import style from './RegisterPage.module.scss';
 import { Link } from 'react-router';
 import { IconGoogle } from '@/assets';
@@ -13,7 +13,7 @@ const RegisterPage = () => {
           Registrujte se na platformu kao zanatlija ukoliko nudite usluge ili kao korisnik ukoliko
           ih tražite.
         </p>
-        <RegisterForm />
+        <RegisterFormContainer />
         <p className={style.registerPage__continue}>ili nastavi sa</p>
         <Button variant="outline" icon={<IconGoogle />} className={style.registerPage__btn}>
           Kreiraj nalog sa Google-om

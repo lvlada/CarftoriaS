@@ -12,6 +12,7 @@ import style from './Header.module.scss';
 import { DropDownContainer } from '../DropDown';
 import { CATEGORIES } from '@/constants';
 import { Link } from 'react-router';
+import { useAuthStore } from '@/store';
 
 const Header = ({ selectedLanguage, onLanguageSelect, links, isLoggedIn }) => {
   const languages = [
@@ -24,6 +25,7 @@ const Header = ({ selectedLanguage, onLanguageSelect, links, isLoggedIn }) => {
       code: 'rs'
     }
   ];
+  const { userLogout } = useAuthStore();
 
   return (
     <header className={style.header}>
@@ -54,13 +56,14 @@ const Header = ({ selectedLanguage, onLanguageSelect, links, isLoggedIn }) => {
               <li className={style.navigation__list__link}>Zakaži uslugu</li>
               <li className={style.navigation__list__link}>
                 {isLoggedIn ? (
-                  <Link to="/profile">
+                  <Link to="/booking/">
                     <IconProfile /> Profil
                   </Link>
                 ) : (
                   <Link to="/login">Prijava/Registracija</Link>
                 )}
               </li>
+              {isLoggedIn ? <li onClick={userLogout}>Izloguj se</li> : null}
               <li className={style.navigation__list__link}>
                 <DropDownContainer
                   items={languages}

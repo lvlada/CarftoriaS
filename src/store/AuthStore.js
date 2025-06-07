@@ -10,14 +10,14 @@ const useAuthStore = create(
 
       setToken: (token) => set({ token }),
 
-      login: (userData, token) =>
+      userLogin: (userData, token) =>
         set({
           isAuthenticated: true,
           user: userData,
           token
         }),
 
-      logout: () =>
+      userLogout: () =>
         set({
           isAuthenticated: false,
           user: null,

@@ -16,6 +16,7 @@ const LoginForm = ({ email, password, onEmailChange, onPasswordChange, login, go
           className={style.input}
           value={email}
           onChange={onEmailChange}
+          name={'email'}
         />
         <Input
           placeholder={'Šifra'}
@@ -23,6 +24,7 @@ const LoginForm = ({ email, password, onEmailChange, onPasswordChange, login, go
           className={style.input}
           value={password}
           onChange={onPasswordChange}
+          name={'password'}
         />
       </form>
       <Link className={style.loginForm__forgotPassword}>Zaboraviljena šifra?</Link>
