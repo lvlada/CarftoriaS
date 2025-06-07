@@ -3,9 +3,16 @@ import style from './ProfilCard.module.scss';
 import { Button } from '@/components/ui/Button/Button';
 import { IconArrowDown, IconArrowUp } from '@/assets';
 import { renderStars } from '@/utils/renderStars';
+import { useNavigate } from 'react-router';
 
 const ProfilCard = ({ user }) => {
   const [open, setOpen] = useState(false);
+
+  const navigate = useNavigate();
+
+  function handleProfile(id) {
+    navigate(`/booking/${id}`);
+  }
 
   return (
     <section className={style.container}>
@@ -34,7 +41,9 @@ const ProfilCard = ({ user }) => {
               <li key={item.id}>{item.serviceName}</li>
             ))}
           </ul>
-          <Button variant="secondary">Zakaži uslugu</Button>
+          <Button variant="secondary" onClick={() => handleProfile(user.id)}>
+            Zakaži uslugu
+          </Button>
         </div>
       </div>
       {open && (
