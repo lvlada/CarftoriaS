@@ -10,7 +10,7 @@
   font-family: variables.$font-mono;
   color: #000;
   &__designer {
-    margin-left: 40px;
+    margin-left: 2.5em;
   }
 
   &__links {
@@ -54,6 +54,13 @@
       flex-wrap: wrap;
       align-items: start;
       gap: 0.5em;
+      & li {
+        & a {
+          color: inherit;
+          text-decoration: none;
+          cursor: pointer;
+        }
+      }
     }
     &__fonts {
       text-transform: uppercase;

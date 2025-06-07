@@ -1,0 +1,20 @@
+@use '@/styles/variables.scss';
+.registerForm {
+  display: flex;
+  flex-direction: column;
+  gap: 2.8125em;
+  & div {
+    display: flex;
+    flex-direction: column;
+    gap: 0.625em;
+    & input {
+      text-indent: 0;
+      border: 1px solid variables.$primary-color;
+    }
+  }
+}
+.errorMessage {
+  color: variables.$accent-color;
+  font-weight: 700;
+  font-size: 0.875rem;
+}

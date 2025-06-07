@@ -37,7 +37,7 @@ const ProfilCardsContainer = () => {
   if (isLoading) return <div>Loading....</div>;
 
   return (
-    <section className={style.profilCardsContainer}>
+    <section className={style.profilCardsContainer} id="profile-cards">
       <p>
         Sortiraj po oceni{' '}
         <span>

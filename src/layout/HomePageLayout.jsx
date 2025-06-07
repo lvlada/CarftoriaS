@@ -4,7 +4,7 @@ import { Outlet } from 'react-router';
 const HomePageLayout = () => {
   return (
     <>
-      <HeaderContainer />
+      <HeaderContainer links />
       <main>
         <Outlet />
       </main>
