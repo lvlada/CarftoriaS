@@ -1,0 +1,15 @@
+.commentContainer {
+  &__comment {
+    border: 1px solid #8b5e3c;
+    border-radius: 15px;
+    padding: 1.875em;
+    margin-bottom: 1.25em;
+  }
+  .commentInfo {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-right: 0.625em;
+    padding-bottom: 0.625em;
+  }
+}

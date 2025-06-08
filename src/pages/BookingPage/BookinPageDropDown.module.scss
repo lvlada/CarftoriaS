@@ -1,0 +1,13 @@
+@use '@/styles/variables.scss';
+
+.dropDown {
+  padding: 14px 23px;
+  width: 41.5rem;
+  height: 4.3125rem;
+  border: 1px solid #2c2c2c;
+  border-radius: 15.7152px;
+  background: #f5f1e6;
+  font-size: 27px;
+  margin-bottom: 20px;
+  font-family: variables.$font-family;
+}
