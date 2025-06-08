@@ -3,10 +3,6 @@
     {
       "source": "/api/craftmans/(.*)",
       "destination": "http://63.178.38.11:8080/CraftoriaS/api/craftmans/$1"
-    },
-    {
-      "source": "/(.*)",
-      "destination": "/index.html"
     }
   ]
 }
