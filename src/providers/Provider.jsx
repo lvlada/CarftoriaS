@@ -1,6 +1,11 @@
 import { BrowserProvider } from './BrowserProvider';
+import { ScrollProvider } from '@/context/ScrollContext';
 
 const Provider = ({ children }) => {
-  return <BrowserProvider>{children}</BrowserProvider>;
+  return (
+    <BrowserProvider>
+      <ScrollProvider>{children}</ScrollProvider>
+    </BrowserProvider>
+  );
 };
 export { Provider };

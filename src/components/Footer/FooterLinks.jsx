@@ -3,6 +3,7 @@ import { DropDownContainer } from '../DropDown';
 import { useState } from 'react';
 import style from './Footer.module.scss';
 import { Link } from 'react-router';
+import { useScroll } from '@/context';
 const FooterLinks = () => {
   const [selectedLanguage, setSelectedLanguage] = useState('en');
   const handleLanguageSelect = (selection) => {
@@ -20,7 +21,7 @@ const FooterLinks = () => {
       code: 'rs'
     }
   ];
-
+  const { scrollToSearchSection, scrollToProfileCards } = useScroll();
   return (
     <div className={style.footer__links}>
       <div className={style.footer__links__container}>
@@ -28,13 +29,37 @@ const FooterLinks = () => {
           <span className={style.footer__links__title}>Prečice</span>
           <ul>
             <li>
-              <a href="#search-section">Pretraga</a>
+              <a
+                href="#"
+                onClick={(e) => {
+                  e.preventDefault();
+                  scrollToSearchSection();
+                }}
+              >
+                Pretraga
+              </a>
             </li>
             <li>
-              <a href="#profile-cards">Kategorije</a>
+              <a
+                href="#"
+                onClick={(e) => {
+                  e.preventDefault();
+                  scrollToSearchSection();
+                }}
+              >
+                Kategorije
+              </a>
             </li>
             <li>
-              <a href="#profile-cards">Zakazi uslugu</a>
+              <a
+                href="#"
+                onClick={(e) => {
+                  e.preventDefault();
+                  scrollToProfileCards();
+                }}
+              >
+                Zakazi uslugu
+              </a>
             </li>
             <li>
               <Link to="/login">Prijava/Registracija</Link>

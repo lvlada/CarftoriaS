@@ -26,4 +26,8 @@
   &__text {
     @extend .p;
   }
+  &__link {
+    text-decoration: none;
+    color: inherit;
+  }
 }
