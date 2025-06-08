@@ -6,9 +6,9 @@ const Provider = ({ children }) => {
   const queryClient = new QueryClient();
   return (
     <BrowserProvider>
-     <QueryClientProvider client={queryClient}>
-      <ScrollProvider>{children}</ScrollProvider>
-     </QueryClientProvider>
+      <QueryClientProvider client={queryClient}>
+        <ScrollProvider>{children}</ScrollProvider>
+      </QueryClientProvider>
     </BrowserProvider>
   );
 };

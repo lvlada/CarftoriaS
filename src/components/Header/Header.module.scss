@@ -2,26 +2,15 @@
 
 .header {
   position: absolute;
+  left: 0;
+  right: 0;
+  z-index: 100;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.21875rem 2em;
+}
 
-  left: 0;
-  right: 0;
-  z-index: 100;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 1.21875rem 2em;
-}
-.headerBooking {
-  left: 0;
-  right: 0;
-  z-index: 100;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 1.21875rem 2em;
-  background-color: #d2d2d2;
-  height: 3.75em;
-}
 .navigation {
   &__list {
     display: flex;
