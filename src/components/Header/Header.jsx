@@ -40,7 +40,6 @@ const Header = ({ selectedLanguage, onLanguageSelect, links, isLoggedIn }) => {
             <>
               <li className={style.navigation__list__link}>
                 <a
-                  href="#"
                   onClick={(e) => {
                     e.preventDefault();
                     scrollToSearchSection();
@@ -63,13 +62,11 @@ const Header = ({ selectedLanguage, onLanguageSelect, links, isLoggedIn }) => {
               </li>
               <li className={style.navigation__list__link}>
                 <a
-                  href="#"
                   onClick={(e) => {
                     e.preventDefault();
                     scrollToProfileCards();
                   }}
                 >
-                  {' '}
                   Zakaži uslugu
                 </a>
               </li>
