@@ -6,3 +6,4 @@ export * from './Rating';
 export * from './DropDown';
 export * from './Banner';
 export * from './SearchSection';
+export * from './ProfilCard';

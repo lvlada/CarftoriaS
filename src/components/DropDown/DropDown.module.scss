@@ -3,7 +3,7 @@
 .dropDown {
   width: fit-content;
   position: relative;
-
+  text-wrap: nowrap;
   &__label {
     cursor: pointer;
     display: flex;

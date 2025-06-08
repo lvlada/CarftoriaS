@@ -13,8 +13,10 @@ import { DropDownContainer } from '../DropDown';
 import { CATEGORIES } from '@/constants';
 import { Link } from 'react-router';
 import { useAuthStore } from '@/store';
+import { useScroll } from '@/context';
 
 const Header = ({ selectedLanguage, onLanguageSelect, links, isLoggedIn }) => {
+  const { scrollToSearchSection, scrollToProfileCards } = useScroll();
   const languages = [
     {
       categoryName: <IconENFlag key="en-flag" />,
@@ -37,7 +39,13 @@ const Header = ({ selectedLanguage, onLanguageSelect, links, isLoggedIn }) => {
           {links ? (
             <>
               <li className={style.navigation__list__link}>
-                <a href="#search-section">
+                <a
+                  href="#"
+                  onClick={(e) => {
+                    e.preventDefault();
+                    scrollToSearchSection();
+                  }}
+                >
                   <IconMagnifyingGlass />
                   Pretraga
                 </a>
@@ -53,7 +61,18 @@ const Header = ({ selectedLanguage, onLanguageSelect, links, isLoggedIn }) => {
                   }
                 />
               </li>
-              <li className={style.navigation__list__link}>Zakaži uslugu</li>
+              <li className={style.navigation__list__link}>
+                <a
+                  href="#"
+                  onClick={(e) => {
+                    e.preventDefault();
+                    scrollToProfileCards();
+                  }}
+                >
+                  {' '}
+                  Zakaži uslugu
+                </a>
+              </li>
               <li className={style.navigation__list__link}>
                 {isLoggedIn ? (
                   <Link to="/booking/">
