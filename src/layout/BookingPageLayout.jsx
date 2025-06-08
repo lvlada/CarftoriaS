@@ -1,11 +1,11 @@
-import { FooterContainer } from '@/components';
-import { HeaderBooking } from '@/components/Header/HeaderBooking';
+import { FooterContainer, HeaderContainer } from '@/components';
+
 import { Outlet } from 'react-router';
 
 const BookingPageLayout = () => {
   return (
     <>
-      <HeaderBooking />
+      <HeaderContainer links />
       <main>
         <Outlet />
       </main>
