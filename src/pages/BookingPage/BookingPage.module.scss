@@ -7,6 +7,7 @@
   border: 1px solid #2c2c2c;
   border-radius: 20px;
   align-items: center;
+  margin-bottom: 3.125em;
 }
 .profileCard {
   display: flex;
@@ -47,4 +48,60 @@
 .starsRow {
   display: flex;
   margin-bottom: 0.5em;
+}
+.commentsTitle {
+  margin-bottom: 10px;
+}
+.commentsLink {
+  text-align: right;
+}
+.commentSpace {
+  margin-bottom: 3em;
+}
+.craftImage {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  img {
+    background-color: #d9d9d9;
+    width: 16.25em;
+    height: 19.375em;
+    margin-bottom: 30px;
+  }
+}
+
+.termin {
+  .terminTitle {
+    color: variables.$secondary-color;
+    font-size: 2.5rem;
+    font-weight: 700;
+  }
+}
+.dropDown {
+  padding: 14px 23px;
+  width: 41.5rem;
+  height: 4.3125rem;
+  border: 1px solid #2c2c2c;
+  border-radius: 15.7152px;
+  background: #f5f1e6;
+  font-size: 1.6875rem;
+  margin-bottom: 1.25em;
+  font-family: variables.$font-family;
+}
+.terminCalendarTitle {
+  font-size: 1.6875rem;
+  font-family: variables.$font-family;
+}
+
+.terminButton {
+  width: 42rem;
+  //em problem
+  margin-top: 1em;
+  margin-bottom: 3em;
+}
+.confirmation {
+  color: variables.$secondary-color;
+  font-size: 1.5rem;
+  font-weight: 600;
+  padding-left: 1.25em;
 }

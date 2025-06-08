@@ -2,6 +2,9 @@ import { SearchSectionContainer } from '@/components';
 import style from './BookingPage.module.scss';
 import { Button } from '@/components/ui/Button/Button';
 import { renderStars } from '@/utils/renderStars';
+import { BookingPageComment } from './BookingPageComment';
+import { BookinPageDropDown } from './BookinPageDropDown';
+import { Calendar } from '@/assets/icons/Calendar';
 
 const BookingPage = ({ user }) => {
   return (
@@ -33,19 +36,43 @@ const BookingPage = ({ user }) => {
             <u>Vidi komentare ({user.comments.length})</u>
           </p>
           <p>Prosečna ocena: {user.avgRating}/5</p>
-          <div className={style.starsRow}>{renderStars(user.avgRating)}</div>
+          <div className={`${style.starsRow} ${style.commentSpace}`}>
+            {renderStars(user.avgRating)}
+          </div>
         </div>
-        <Button variant="secondary">Zakaži moj termin!</Button>
-        <p className={style.profileCard__left__title}>LOREM IPSUM</p>
-        <p>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque nesciunt inventore
-          voluptas? Aperiam, repellendus ad ea id necessitatibus aspernatur aliquam impedit corrupti
-          delectus quas nemo asperiores. Beatae rem quis architecto. Lorem ipsum dolor sit amet
-          consectetur adipisicing elit. Error eos iure sapiente aspernatur. Asperiores commodi sint
-          reprehenderit est, esse molestias dicta accusantium et laborum, quis ipsam maxime
-          provident? Tenetur, quaerat.
-        </p>
+        <p className={style.profileCard__left__title}>Opis iskustva</p>
+        <p className={style.commentSpace}>{user.description}</p>
+        <div className={style.termin}>
+          <p className={style.terminTitle}>ZAKAZIVANJE</p>
+          <BookinPageDropDown user={user} />
+          <br />
+          <select name="" id="" className={style.dropDown}>
+            <option disabled selected value="">
+              Odaberite mesec i godinu:
+            </option>
+          </select>
+          <p className={style.terminCalendarTitle}>Odaberite datum i slobodan termin:</p>
+          <Calendar />
+        </div>
+        <Button variant="secondary" className={style.terminButton}>
+          Zakaži moj termin!
+        </Button>
+        <span className={style.confirmation}>Vaš termin je uspešno zakazan!</span>
         <p className={style.profileCard__left__title}>Radovi zanatlije:</p>
+        <div className={style.craftImage}>
+          {user.images && user.images.length > 0
+            ? user.images.map((item) => <img key={item} src={item} alt="Craftman work" />)
+            : Array.from({ length: 4 }).map((_, idx) => (
+                <img key={idx} src="#" alt="Craftman work placeholder" />
+              ))}
+        </div>
+        <p className={style.commentsTitle}>Komentari korisnika</p>
+        {user.comments.map((comment) => (
+          <BookingPageComment key={comment.id} item={comment} name={comment.userId} />
+        ))}
+        <p className={style.commentsLink}>
+          <u>Prikaži sve komentare ({user.comments.length})</u>
+        </p>
       </section>
       <SearchSectionContainer />
     </>

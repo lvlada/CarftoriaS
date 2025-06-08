@@ -10,7 +10,6 @@ const BookingPageContainer = () => {
     queryKey: ['caftman', id],
     queryFn: () => getCraftman(id)
   });
-  console.log(data);
   if (isLoading) return <div>Loading....</div>;
 
   return (
