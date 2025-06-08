@@ -41,7 +41,7 @@ const ProfilCard = ({ user }) => {
               <li key={item.id}>{item.serviceName}</li>
             ))}
           </ul>
-          <Button variant="secondary" onClick={() => handleProfile(user.craftmanId)}>
+          <Button variant="secondary" onClick={() => handleProfile(user.id)}>
             Zakaži uslugu
           </Button>
         </div>
