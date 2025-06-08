@@ -1,40 +1,57 @@
 import { IconArrowRight, IconSearch } from '@/assets';
 import { Input } from '../ui';
 import style from './SearchSection.module.scss';
-import { useState } from 'react';
+import { forwardRef } from 'react';
 import { Select } from '../ui/Select';
-import { locationList } from '@/fake_data/locationList';
-import { CATEGORIES } from '@/constants';
 
-const SearchSection = () => {
-  const [searchItem, setSearchItem] = useState('');
+const SearchSection = forwardRef((props, ref) => {
+  const {
+    searchItem,
+    selectedCategory,
+    selectedSubCategory,
+    selectedLocation,
+    subCategories,
+    categories,
+    locations,
+    onCategoryChange,
+    onSubCategoryChange,
+    onLocationChange,
+    onSearchInputChange,
+    onSubmit
+  } = props;
 
   return (
-    <section className={style.searchSection}>
+    <section className={style.searchSection} id="search-section" ref={ref}>
       <h2 className={style.searchSection__heading}>Pretraži zanatlije po:</h2>
-      <form className={style.searchSection__form}>
+      <form className={style.searchSection__form} onSubmit={onSubmit}>
         <div className={style.searchSection__select__container}>
           <Select
-            options={CATEGORIES.map((category) => category.categoryName)}
+            options={categories.map((category) => category.categoryName)}
             name="category"
             placeholder="Kategorija"
+            value={selectedCategory}
+            onChange={onCategoryChange}
           />
           <Select
-            options={CATEGORIES.flatMap((category) => category.subCategories)}
+            options={subCategories}
             name="craftmans"
             placeholder="Zanat"
+            value={selectedSubCategory}
+            onChange={onSubCategoryChange}
           />
           <Select
-            options={locationList.map((location) => location.city)}
+            options={locations.map((location) => location.city)}
             name="location"
             placeholder="Lokacija"
+            value={selectedLocation}
+            onChange={onLocationChange}
           />
         </div>
         <div className={style.searchSection__input__container}>
           <Input
             icon={<IconSearch />}
             placeholder="Unesi ime, kategoriju, mesto..."
-            onChange={(e) => setSearchItem(e.target.value)}
+            onChange={onSearchInputChange}
             value={searchItem}
             className={style.searchSection__input}
             name="search"
@@ -46,6 +63,8 @@ const SearchSection = () => {
       </form>
     </section>
   );
-};
+});
+
+SearchSection.displayName = 'SearchSection';
 
 export { SearchSection };

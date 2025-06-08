@@ -3,7 +3,7 @@ const IconArrowUp = ({ color = 'black', width = '21', height = '20' }) => {
     <svg
       width={width}
       height={height}
-      viewBox="0 0 28 15"
+      viewBox="0 0 28 28"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
     >

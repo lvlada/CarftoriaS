@@ -15,3 +15,18 @@
   position: relative;
   z-index: 1;
 }
+
+@mixin blurred-background($image-path, $blur-amount: 70px) {
+  position: relative;
+
+  &::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-image: url($image-path);
+    filter: blur($blur-amount);
+    background-size: cover;
+    background-position: center;
+    z-index: -1;
+  }
+}

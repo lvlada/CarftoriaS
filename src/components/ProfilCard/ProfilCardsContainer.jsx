@@ -6,10 +6,12 @@ import { IconArrowRightSolid, IconArrowLeftSolid } from '@/assets/icons';
 import { sortUsersByRating, sortUsersByComments } from '@/utils';
 import { getAllCraftsmen } from '@/services/api.js';
 import { useQuery } from '@tanstack/react-query';
+import { useScroll } from '@/context/ScrollContext';
 
 const ProfilCardsContainer = () => {
   const [newList, setNewList] = useState([]);
   const [ratingAsc, setRatingAsc] = useState(true);
+  const { profileCardsRef } = useScroll();
 
   const { data, isLoading } = useQuery({
     queryKey: ['craftmens'],
@@ -37,7 +39,7 @@ const ProfilCardsContainer = () => {
   if (isLoading) return <div>Loading....</div>;
 
   return (
-    <section className={style.profilCardsContainer}>
+    <section className={style.profilCardsContainer} id="profile-cards" ref={profileCardsRef}>
       <p>
         Sortiraj po oceni{' '}
         <span>

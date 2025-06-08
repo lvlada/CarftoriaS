@@ -24,7 +24,7 @@
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
-    right: 15%;
+    right: 5%;
   }
   &__option {
     text-align: left;
@@ -35,4 +35,5 @@
   width: 17.5em;
   height: 4.3125em;
   position: relative;
+  width: 100%;
 }

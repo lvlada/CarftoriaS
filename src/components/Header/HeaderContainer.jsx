@@ -1,18 +1,24 @@
 import { useState } from 'react';
 import { Header } from './Header';
+import { useAuthStore } from '@/store';
 
-const HeaderContainer = () => {
-  const [selectedLanguage, setSelectedLanguage] = useState('en'); // Default language is English
-
+const HeaderContainer = ({ links }) => {
+  const [selectedLanguage, setSelectedLanguage] = useState('en');
+  const { isAuthenticated } = useAuthStore();
   const handleLanguageSelect = (selection) => {
     if (selection && selection.category && selection.category.code) {
       setSelectedLanguage(selection.category.code);
-      // Here you could also trigger any other actions needed when language changes
-      // such as updating translations, etc.
     }
   };
 
-  return <Header selectedLanguage={selectedLanguage} onLanguageSelect={handleLanguageSelect} />;
+  return (
+    <Header
+      selectedLanguage={selectedLanguage}
+      onLanguageSelect={handleLanguageSelect}
+      links={links}
+      isLoggedIn={isAuthenticated}
+    />
+  );
 };
 
 export { HeaderContainer };
