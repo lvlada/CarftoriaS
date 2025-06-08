@@ -30,7 +30,6 @@ const FooterLinks = () => {
           <ul>
             <li>
               <a
-                href="#"
                 onClick={(e) => {
                   e.preventDefault();
                   scrollToSearchSection();
@@ -41,7 +40,6 @@ const FooterLinks = () => {
             </li>
             <li>
               <a
-                href="#"
                 onClick={(e) => {
                   e.preventDefault();
                   scrollToSearchSection();
@@ -52,7 +50,6 @@ const FooterLinks = () => {
             </li>
             <li>
               <a
-                href="#"
                 onClick={(e) => {
                   e.preventDefault();
                   scrollToProfileCards();

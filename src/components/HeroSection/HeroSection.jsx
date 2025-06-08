@@ -10,17 +10,14 @@ const HeroSection = ({ title, description, link }) => {
       <div className={style.hero__content}>
         <h1 className={style.hero__title}>{title}</h1>
         <p className={style.hero__text}>{description}</p>
-        <Button variant="primary">
-          <a
-            href="#"
-            onClick={(e) => {
-              e.preventDefault();
-              scrollToSearchSection();
-            }}
-            className={style.hero__link}
-          >
-            {link}
-          </a>
+        <Button
+          variant="primary"
+          onClick={(e) => {
+            e.preventDefault();
+            scrollToSearchSection();
+          }}
+        >
+          {link}
         </Button>
       </div>
     </section>
