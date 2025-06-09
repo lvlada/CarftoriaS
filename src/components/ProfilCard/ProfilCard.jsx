@@ -18,7 +18,7 @@ const ProfilCard = ({ user }) => {
     <section className={style.container}>
       <div className={style.profileCard}>
         <div className={style.profileCard__img}>
-          <img src="" alt="profile image" />
+          <img src={user.profileImage} alt="profile image" />
         </div>
         <div className={style.profileCard__left}>
           <div>
@@ -30,7 +30,7 @@ const ProfilCard = ({ user }) => {
             <p>
               <u>Vidi komentare ({user.comments.length})</u>
             </p>
-            <p>Prosečna ocena: {user.avgRating}/5</p>
+            <p>Prosečna ocena: {user.avgRating.toFixed(1)}/5</p>
             <div className={style.starsRow}>{renderStars(user.avgRating)}</div>
           </div>
         </div>
@@ -48,21 +48,18 @@ const ProfilCard = ({ user }) => {
       </div>
       {open && (
         <div className={style.profilecard__collapsible}>
-          {user.images.map((item) => (
+          {user.images.slice(0, 4).map((item) => (
             <img key={item} src={item} className={style.profilecard__collapsible_img} />
           ))}
         </div>
       )}
       <div className={style.profileCard__toggle}>
-        <p onClick={() => setOpen(!open)}>
-          {open ? 'Prikazi manje' : 'Prikazi vise'}
-
-          {open ? (
-            <IconArrowUp width="28" height="28" className={style.arrowIcon} />
-          ) : (
-            <IconArrowDown width="28" height="28" className={style.arrowIcon} />
-          )}
-        </p>
+        <p onClick={() => setOpen(!open)}>{open ? 'Prikazi manje' : 'Prikazi vise'}</p>
+        {open ? (
+          <IconArrowUp width="28" height="28" className={style.arrowIcon} />
+        ) : (
+          <IconArrowDown width="28" height="28" className={style.arrowIcon} />
+        )}
       </div>
     </section>
   );

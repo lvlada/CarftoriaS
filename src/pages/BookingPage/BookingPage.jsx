@@ -5,25 +5,31 @@ import { renderStars } from '@/utils/renderStars';
 import { BookingPageComment } from './BookingPageComment';
 import { BookinPageDropDown } from './BookinPageDropDown';
 import { Calendar } from '@/assets/icons/Calendar';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const BookingPage = ({ user }) => {
+  const handleAlert = () => {
+    toast.success('Vas termin je zakazan!');
+  };
+
   return (
     <>
       <p className={style.profileCard__left__title}>Profil zanatlije</p>
       <section className={style.bookingPage}>
         <div className={style.profileCard}>
           <div className={style.profileCard__img}>
-            <img src="" alt="profile image" />
+            <img src={user.profileImage} alt="profile image" />
           </div>
           <div className={style.profileCard__left}>
             <div>
-              <p className={style.profileCard__left__title}>{user.fullName}</p>
+              <p className={style.profileCard__left__name}>{user.fullName}</p>
               <p>{user.description}</p>
               <p>{user.city}</p>
             </div>
           </div>
           <div className={style.profileCard__right}>
-            <p className={style.profileCard__left__title}>Liste usluga </p>
+            <p className={style.profileCard__left__name}>Liste usluga </p>
             <ul>
               {user.services.map((item) => (
                 <li key={item.id}>{item.serviceName}</li>
@@ -35,7 +41,7 @@ const BookingPage = ({ user }) => {
           <p>
             <u>Vidi komentare ({user.comments.length})</u>
           </p>
-          <p>Prosečna ocena: {user.avgRating}/5</p>
+          <p>Prosečna ocena: {user.avgRating.toFixed(1)}/5</p>
           <div className={`${style.starsRow} ${style.commentSpace}`}>
             {renderStars(user.avgRating)}
           </div>
@@ -54,14 +60,15 @@ const BookingPage = ({ user }) => {
           <p className={style.terminCalendarTitle}>Odaberite datum i slobodan termin:</p>
           <Calendar />
         </div>
-        <Button variant="secondary" className={style.terminButton}>
+        <Button variant="secondary" className={style.terminButton} onClick={handleAlert}>
           Zakaži moj termin!
         </Button>
-        <span className={style.confirmation}>Vaš termin je uspešno zakazan!</span>
         <p className={style.profileCard__left__title}>Radovi zanatlije:</p>
         <div className={style.craftImage}>
           {user.images && user.images.length > 0
-            ? user.images.map((item) => <img key={item} src={item} alt="Craftman work" />)
+            ? user.images
+                .slice(0, 4)
+                .map((item) => <img key={item} src={item} alt="Craftman work" />)
             : Array.from({ length: 4 }).map((_, idx) => (
                 <img key={idx} src="#" alt="Craftman work placeholder" />
               ))}
@@ -75,6 +82,7 @@ const BookingPage = ({ user }) => {
         </p>
       </section>
       <SearchSectionContainer />
+      <ToastContainer />
     </>
   );
 };
