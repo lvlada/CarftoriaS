@@ -27,7 +27,7 @@ const Header = ({ selectedLanguage, onLanguageSelect, links, isLoggedIn }) => {
       code: 'rs'
     }
   ];
-  const { userLogout } = useAuthStore();
+  const { user, userLogout } = useAuthStore();
 
   return (
     <header className={style.header}>
@@ -72,7 +72,7 @@ const Header = ({ selectedLanguage, onLanguageSelect, links, isLoggedIn }) => {
               </li>
               <li className={style.navigation__list__link}>
                 {isLoggedIn ? (
-                  <Link to="/booking/">
+                  <Link to={`/booking/${user.id}`}>
                     <IconProfile /> Profil
                   </Link>
                 ) : (
