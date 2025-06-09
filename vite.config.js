@@ -12,5 +12,14 @@ export default defineConfig({
     alias: {
       '@': resolve(__dirname, './src')
     }
+  },
+  server: {
+    proxy: {
+      '/api/craftmans': {
+        target: 'http://63.178.38.11:8080',
+        changeOrigin: true,
+        rewrite: (path) => path.replace(/^\/api\/craftmans/, '/CraftoriaS/api/craftmans')
+      }
+    }
   }
 });
