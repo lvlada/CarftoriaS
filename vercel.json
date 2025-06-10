@@ -9,6 +9,10 @@
       "destination": "http://63.178.38.11:8080/CraftoriaS/api/login"
     },
     {
+      "source": "/api/signup",
+      "destination": "http://63.178.38.11:8080/CraftoriaS/api/signup"
+    },
+    {
       "source": "/(.*)",
       "destination": "/index.html"
     }
