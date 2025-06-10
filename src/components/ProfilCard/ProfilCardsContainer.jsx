@@ -4,48 +4,45 @@ import arrows from '@/assets/images/arrows.png';
 import style from './ProfilCardsContainer.module.scss';
 import { IconArrowRightSolid, IconArrowLeftSolid } from '@/assets/icons';
 import { sortUsersByRating, sortUsersByComments } from '@/utils';
-import { getAllCraftsmen } from '@/services/api.js';
-import { useQuery } from '@tanstack/react-query';
 import { useScroll } from '@/context/ScrollContext';
+import { useCraftsmenStore } from '@/store/CraftsmenStore';
 
 const ProfilCardsContainer = () => {
-  const [newList, setNewList] = useState([]);
   const [ratingAsc, setRatingAsc] = useState(true);
   const [page, setPage] = useState(1);
   const [perPage, setPerPage] = useState(10);
   const { profileCardsRef } = useScroll();
 
-  const { data, isLoading } = useQuery({
-    queryKey: ['craftmens'],
-    queryFn: getAllCraftsmen
-  });
+  // Koristi filtrirane podatke iz globalnog store-a
+  const filteredCraftsmen = useCraftsmenStore((state) => state.filteredCraftsmen);
 
+  // Lokalni state za sortiranu listu (da ne menjaš globalni store)
+  const [sortedList, setSortedList] = useState(filteredCraftsmen);
+
+  // Kad se filtrirani podaci promene, resetuj sortiranu listu i paginaciju
   useEffect(() => {
-    if (data && Array.isArray(data)) {
-      setNewList(data);
-    } else if (data && Array.isArray(data.craftmens)) {
-      setNewList(data.craftmens);
-    }
-  }, [data]);
+    setSortedList(filteredCraftsmen);
+    setPage(1);
+  }, [filteredCraftsmen]);
 
   // sortiranje
   const fileterByRating = () => {
-    setNewList(sortUsersByRating(newList, ratingAsc));
+    setSortedList(sortUsersByRating(sortedList, ratingAsc));
     setRatingAsc(!ratingAsc);
     setPage(1);
   };
 
   const filterByComments = () => {
-    setNewList(sortUsersByComments(newList, ratingAsc));
+    setSortedList(sortUsersByComments(sortedList, ratingAsc));
     setRatingAsc(!ratingAsc);
     setPage(1);
   };
 
   // paginacija
-  const totalPages = Math.ceil(newList.length / perPage);
+  const totalPages = Math.ceil(sortedList.length / perPage);
   const start = (page - 1) * perPage;
   const end = start + perPage;
-  const paginatedUsers = newList.slice(start, end);
+  const paginatedUsers = sortedList.slice(start, end);
 
   const handlePerPage = (num) => {
     setPerPage(num);
@@ -55,7 +52,7 @@ const ProfilCardsContainer = () => {
   const handlePrev = () => setPage((p) => (p > 1 ? p - 1 : 1));
   const handleNext = () => setPage((p) => (p < totalPages ? p + 1 : totalPages));
 
-  if (isLoading) return <div>Loading....</div>;
+  if (!filteredCraftsmen) return <div>Loading....</div>;
 
   return (
     <section className={style.profilCardsContainer} id="profile-cards" ref={profileCardsRef}>
@@ -116,7 +113,7 @@ const ProfilCardsContainer = () => {
           </span>
           <span
             style={{ cursor: 'pointer', marginLeft: 8 }}
-            onClick={() => handlePerPage(newList.length)}
+            onClick={() => handlePerPage(sortedList.length)}
           >
             {' '}
             sve{' '}
