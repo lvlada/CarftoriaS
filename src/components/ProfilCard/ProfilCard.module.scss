@@ -71,6 +71,8 @@
   gap: 8px;
 
   p {
+    display: flex;
+    align-items: center;
     cursor: pointer;
   }
 }

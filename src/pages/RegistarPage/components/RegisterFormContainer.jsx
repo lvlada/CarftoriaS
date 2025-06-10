@@ -82,6 +82,7 @@ const RegisterFormContainer = () => {
       registerSchema.parse(formData);
       console.log('Form submitted successfully:', formData);
       signup(formData.fullName, formData.email, formData.password, formData.isCraftman);
+      alert('Vaš nalog je uspešno kreiran!');
     } catch (error) {
       if (error instanceof z.ZodError) {
         const newErrors = {};
@@ -96,6 +97,8 @@ const RegisterFormContainer = () => {
 
   return (
     <RegisterForm
+      formData={formData}
+      errors={errors}
       onSubmit={handleSubmit}
       onSelectCraftman={handleSelectChange}
       onChange={handleChange}

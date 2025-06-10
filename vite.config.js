@@ -24,6 +24,11 @@ export default defineConfig({
         target: 'http://63.178.38.11:8080',
         changeOrigin: true,
         rewrite: (path) => path.replace(/^\/api\/login/, '/CraftoriaS/api/login')
+      },
+      '/api/signup': {
+        target: 'http://63.178.38.11:8080',
+        changeOrigin: true,
+        rewrite: (path) => path.replace(/^\/api\/signup/, '/CraftoriaS/api/signup')
       }
     }
   }

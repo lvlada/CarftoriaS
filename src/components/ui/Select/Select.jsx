@@ -1,5 +1,6 @@
 import { IconSelectDropDown } from '@/assets';
 import styles from './Select.module.scss';
+import { firstLetterUpperCase } from '@/utils';
 
 const Select = ({ options, value, onChange, name, placeholder, disabled }) => {
   return (
@@ -13,12 +14,12 @@ const Select = ({ options, value, onChange, name, placeholder, disabled }) => {
       >
         {placeholder && (
           <option value="" disabled>
-            {placeholder}
+            {firstLetterUpperCase(placeholder)}
           </option>
         )}
         {options.map((option) => (
           <option key={option} value={option} className={styles.select__option}>
-            {option}
+            {firstLetterUpperCase(option)}
           </option>
         ))}
       </select>

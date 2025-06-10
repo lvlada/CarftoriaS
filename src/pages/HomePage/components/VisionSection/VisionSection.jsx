@@ -1,7 +1,9 @@
 import { Button } from '@/components';
 import style from './VisionSection.module.scss';
+import { useScroll } from '@/context';
 
 const VisionSection = () => {
+  const { scrollToProfileCards } = useScroll();
   return (
     <section className={style.visionSection}>
       <div className={style.visionSection__image}></div>
@@ -13,7 +15,12 @@ const VisionSection = () => {
           modernizuje njihovo poslovanje. Naši korisnici su građani Srbije koji traže kvalitetne
           zanatske usluge, kao i turisti zainteresovani za autentične rukotvorine.
         </p>
-        <Button>{`Vidi sve  zanatlije >`}</Button>
+        <Button
+          onClick={(e) => {
+            e.preventDefault();
+            scrollToProfileCards();
+          }}
+        >{`Vidi sve  zanatlije >`}</Button>
       </div>
     </section>
   );
