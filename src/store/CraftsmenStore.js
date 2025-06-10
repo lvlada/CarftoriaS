@@ -1,8 +1,6 @@
 import { create } from 'zustand';
 import axios from 'axios';
 
-const HTML = '/api/craftmans/';
-
 export const useCraftsmenStore = create((set) => ({
   craftsmen: [],
   filteredCraftsmen: [],
@@ -11,7 +9,7 @@ export const useCraftsmenStore = create((set) => ({
   fetchAllCraftsmen: async () => {
     set({ isLoading: true });
     try {
-      const res = await axios.get(HTML);
+      const res = await axios.get('/api/craftmans/');
       set({
         craftsmen: res.data || [],
         filteredCraftsmen: res.data || [],
@@ -27,12 +25,15 @@ export const useCraftsmenStore = create((set) => ({
       let filtered = state.craftsmen;
 
       // Filtriraj po imenu (fullName)
+      // Filtriraj po gradu (cityName)
+      // Filtriraj po uslugama (services)
       if (searchItem) {
         const search = searchItem.toLowerCase();
         filtered = filtered.filter(
           (c) =>
             c.fullName?.toLowerCase().includes(search) ||
             c.cityName?.toLowerCase().includes(search) ||
+            c.services.serviceName?.toLowerCase().includes(search) ||
             (Array.isArray(c.services) &&
               c.services.some((s) => s.serviceName?.toLowerCase().includes(search)))
         );

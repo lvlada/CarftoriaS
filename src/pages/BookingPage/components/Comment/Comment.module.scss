@@ -1,6 +1,8 @@
+@use '@/styles/variables.scss';
+
 .commentContainer {
   &__comment {
-    border: 1px solid #8b5e3c;
+    border: 1px solid variables.$primary-color;
     border-radius: 15px;
     padding: 1.875em;
     margin-bottom: 1.25em;

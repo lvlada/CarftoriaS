@@ -1,16 +1,16 @@
-import { BannerItem } from './BannerItem';
 import style from './Banner.module.scss';
-import image from '@/assets/BannerPlaceHolder.png';
 
-const Banner = () => {
+const Banner = ({ image, title }) => {
   return (
     <section className={style.banner}>
-      <BannerItem image={image} title="Naziv firme" />
-      <BannerItem image={image} title="Naziv firme" />
-      <BannerItem image={image} title="Naziv firme" />
-      <BannerItem image={image} title="Naziv firme" />
-      <BannerItem image={image} title="Naziv firme" />
-      <BannerItem image={image} title="Naziv firme" />
+      <div className={style.banner__container}>
+        <div className={style.banner__image}>
+          <img src={image} alt="banner-image" />
+        </div>
+        <div className={style.banner__text}>
+          <p>{title}</p>
+        </div>
+      </div>
     </section>
   );
 };

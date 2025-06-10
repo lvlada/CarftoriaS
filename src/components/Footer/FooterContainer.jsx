@@ -1,7 +1,7 @@
 import { Footer } from './Footer';
 
-const FooterContainer = () => {
-  return <Footer links />;
+const FooterContainer = ({ links }) => {
+  return <Footer links={links} />;
 };
 
 export { FooterContainer };

@@ -2,8 +2,7 @@ import { SearchSectionContainer } from '@/components';
 import style from './BookingPage.module.scss';
 import { Button } from '@/components/ui/Button/Button';
 import { renderStars } from '@/utils/renderStars';
-import { BookingPageComment } from './BookingPageComment';
-import { BookinPageDropDown } from './BookinPageDropDown';
+import { Comment, DropDown } from './components';
 import { Calendar } from '@/assets/icons/Calendar';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
@@ -58,7 +57,7 @@ const BookingPage = ({ user }) => {
         <p className={style.commentSpace}>{user.description}</p>
         <div className={style.termin}>
           <p className={style.terminTitle}>ZAKAZIVANJE</p>
-          <BookinPageDropDown user={user} />
+          <DropDown user={user} />
           <br />
           <select name="" id="" className={style.dropDown}>
             <option disabled selected value="">
@@ -85,7 +84,7 @@ const BookingPage = ({ user }) => {
           Komentari korisnika
         </p>
         {user.comments.map((comment) => (
-          <BookingPageComment key={comment.id} item={comment} name={comment.userId} />
+          <Comment key={comment.id} item={comment} name={comment.userId} />
         ))}
         <p className={style.commentsLink}>
           <u>Prikaži sve komentare ({user.comments.length})</u>

@@ -1,0 +1,9 @@
+@use '@/styles/mixins.scss';
+
+.banner {
+  @include mixins.container;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  width: 73.375em;
+}

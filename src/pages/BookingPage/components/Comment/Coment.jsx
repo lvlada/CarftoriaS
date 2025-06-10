@@ -1,5 +1,5 @@
-import style from './BookingPageComment.module.scss';
-const BookingPageComment = ({ item, name }) => {
+import style from './Comment.module.scss';
+const Comment = ({ item, name }) => {
   return (
     <div className={style.commentContainer}>
       <div className={style.commentInfo}>
@@ -17,4 +17,4 @@ const BookingPageComment = ({ item, name }) => {
   );
 };
 
-export { BookingPageComment };
+export { Comment };

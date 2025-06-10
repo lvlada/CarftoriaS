@@ -8,7 +8,7 @@ const HomePageLayout = () => {
       <main>
         <Outlet />
       </main>
-      <FooterContainer />
+      <FooterContainer links />
     </>
   );
 };

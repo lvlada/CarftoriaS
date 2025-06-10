@@ -1,9 +1,13 @@
-@use '@/styles/mixins.scss';
-
 .banner {
-  @include mixins.container;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: center;
-  width: 73.375em;
+  text-align: center;
+
+  &__container {
+    width: 9.625em;
+    height: 11.5625em;
+  }
+  &__image {
+    width: 9.625em;
+    height: 9.625em;
+    margin-bottom: 0.5em;
+  }
 }

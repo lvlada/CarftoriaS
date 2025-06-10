@@ -1,6 +1,6 @@
-import style from './BookinPageDropDown.module.scss';
+import style from './DropDown.module.scss';
 
-const BookinPageDropDown = ({ user }) => {
+const DropDown = ({ user }) => {
   return (
     <select name="" id="" className={style.dropDown}>
       <option disabled selected value="">
@@ -15,4 +15,4 @@ const BookinPageDropDown = ({ user }) => {
   );
 };
 
-export { BookinPageDropDown };
+export { DropDown };

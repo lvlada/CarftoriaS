@@ -13,9 +13,9 @@ const BookingPageContainer = () => {
   if (isLoading) return <div>Loading....</div>;
 
   return (
-    <section className={style.bookingPage}>
+    <div className={style.bookingPage}>
       <BookingPage user={data} />
-    </section>
+    </div>
   );
 };
 

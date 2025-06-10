@@ -9,7 +9,7 @@ const BookingPageLayout = () => {
       <main>
         <Outlet />
       </main>
-      <FooterContainer />
+      <FooterContainer links />
     </>
   );
 };

@@ -1,11 +1,10 @@
-import { Container } from '@/components';
 import { CrafterCounter } from './CrafterCounter';
-
+import style from './CrafterCounter.module.scss';
 const CrafterCounterContainer = () => {
   return (
-    <Container>
+    <div className={style.crafterCounterContainer}>
       <CrafterCounter />
-    </Container>
+    </div>
   );
 };
 
