@@ -6,12 +6,20 @@ import { Comment, DropDown } from './components';
 import { Calendar } from '@/assets/icons/Calendar';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import { useEffect } from 'react';
 
 const BookingPage = ({ user }) => {
   const handleAlert = () => {
     toast.success('Vas termin je zakazan!');
   };
-
+  useEffect(() => {
+    if (location.hash) {
+      const el = document.getElementById(location.hash.replace('#', ''));
+      if (el) {
+        el.scrollIntoView({ behavior: 'smooth' });
+      }
+    }
+  }, [location]);
   return (
     <>
       <p className={style.profileCard__left__title}>Profil zanatlije</p>
@@ -72,7 +80,9 @@ const BookingPage = ({ user }) => {
                 <img key={idx} src="#" alt="Craftman work placeholder" />
               ))}
         </div>
-        <p className={style.commentsTitle}>Komentari korisnika</p>
+        <p id="comments" className={style.commentsTitle}>
+          Komentari korisnika
+        </p>
         {user.comments.map((comment) => (
           <Comment key={comment.id} item={comment} name={comment.userId} />
         ))}

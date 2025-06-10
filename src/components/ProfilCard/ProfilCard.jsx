@@ -3,7 +3,7 @@ import style from './ProfilCard.module.scss';
 import { Button } from '@/components/ui/Button/Button';
 import { IconArrowDown, IconArrowUp } from '@/assets';
 import { renderStars } from '@/utils/renderStars';
-import { useNavigate } from 'react-router';
+import { useNavigate, Link } from 'react-router';
 
 const ProfilCard = ({ user }) => {
   const [open, setOpen] = useState(false);
@@ -28,7 +28,12 @@ const ProfilCard = ({ user }) => {
           </div>
           <div className={style.profileCard__left__comments}>
             <p>
-              <u>Vidi komentare ({user.comments.length})</u>
+              <u>
+                {' '}
+                <Link to={`/booking/${user.craftmanId}#comments`}>
+                  Vidi komentare ({user.comments.length})
+                </Link>
+              </u>
             </p>
             <p>Prosečna ocena: {user.avgRating.toFixed(1)}/5</p>
             <div className={style.starsRow}>{renderStars(user.avgRating)}</div>
