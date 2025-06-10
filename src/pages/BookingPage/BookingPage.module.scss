@@ -4,7 +4,7 @@
   width: 100%;
   padding: 2em;
   margin-top: 0.625em;
-  border: 1px solid #2c2c2c;
+  border: 1px solid variables.$font-color;
   border-radius: 20px;
   align-items: center;
   margin-bottom: 3.125em;
@@ -93,9 +93,9 @@
   padding: 14px 23px;
   width: 41.5rem;
   height: 4.3125rem;
-  border: 1px solid #2c2c2c;
+  border: 1px solid variables.$font-color;
   border-radius: 15.7152px;
-  background: #f5f1e6;
+  background: variables.$background-color;
   font-size: 1.6875rem;
   margin-bottom: 1.25em;
   font-family: variables.$font-family;

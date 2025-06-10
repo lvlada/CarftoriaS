@@ -1,5 +1,5 @@
 import { Button } from '@/components';
-import { RegisterFormContainer } from './components';
+import { RegisterFormContainer } from './components/Form';
 import style from './RegisterPage.module.scss';
 import { Link } from 'react-router';
 import { IconGoogle } from '@/assets';

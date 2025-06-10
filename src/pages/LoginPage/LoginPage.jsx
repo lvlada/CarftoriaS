@@ -1,4 +1,4 @@
-import { LoginFormContainer } from './components';
+import { LoginFormContainer } from './components/Form';
 import style from './LoginPage.module.scss';
 const LoginPage = () => {
   return (

@@ -52,12 +52,6 @@ const SearchSectionContainer = () => {
       selectedSubCategory,
       selectedLocation
     });
-    console.log({
-      searchItem,
-      selectedCategory,
-      selectedSubCategory,
-      selectedLocation
-    });
   };
 
   return (

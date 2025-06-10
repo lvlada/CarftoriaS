@@ -1,14 +1,13 @@
 import { BrowserProvider } from './BrowserProvider';
-import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import { ScrollProvider } from '@/context/ScrollContext';
+import { QueryProvider } from './QueryProvider';
 
 const Provider = ({ children }) => {
-  const queryClient = new QueryClient();
   return (
     <BrowserProvider>
-      <QueryClientProvider client={queryClient}>
+      <QueryProvider>
         <ScrollProvider>{children}</ScrollProvider>
-      </QueryClientProvider>
+      </QueryProvider>
     </BrowserProvider>
   );
 };

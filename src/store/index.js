@@ -1,2 +1,2 @@
 export * from './AuthStore';
-export * from './SearchStore';
+export * from './CraftsmenStore';

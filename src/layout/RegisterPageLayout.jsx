@@ -1,4 +1,4 @@
-import { Footer, HeaderContainer } from '@/components';
+import { FooterContainer, HeaderContainer } from '@/components';
 import { Outlet } from 'react-router';
 
 const RegistarPageLayout = () => {
@@ -8,7 +8,7 @@ const RegistarPageLayout = () => {
       <main>
         <Outlet />
       </main>
-      <Footer />
+      <FooterContainer />
     </>
   );
 };
