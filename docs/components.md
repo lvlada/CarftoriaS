@@ -2,7 +2,7 @@
 
 Components that are globally used should be placed inside of `/src/components`.
 
-Each component should have:
+Each component in their folder should have:
 
 1. `Component.jsx`
 2. `Component.module.scss`
@@ -30,10 +30,18 @@ This file contains the React component logic.
 // filepath: /src/components/ui/Button/Button.jsx
 import styles from './Button.module.scss';
 
-const Button = ({ children, className, onClick, type = 'button', disabled, icon }) => {
+const Button = ({
+  children,
+  className,
+  onClick,
+  type = 'button',
+  disabled,
+  icon,
+  variant = 'primary'
+}) => {
   return (
     <button
-      className={`${styles.button} ${className}`}
+      className={`${styles.button} ${styles[`button--${variant}`]} ${className}`}
       onClick={onClick}
       type={type}
       disabled={disabled}
@@ -51,15 +59,36 @@ export { Button };
 
 ```
 // filepath: /src/components/ui/Button/Button.module.scss
-.button {
-  background: red;
-  color: white;
-  padding: 2em;
+@use '@/styles/variables';
+@use '@/styles/typography';
 
-  &:hover {
-    background: blue;
+.button {
+  @extend .cta;
+  outline: none;
+  border: none;
+  border-radius: 0.75em;
+  cursor: pointer;
+  width: 100%;
+  color: variables.$background-color;
+  padding-block: 0.9375em;
+
+  &--primary {
+    background: variables.$primary-color;
+  }
+
+  &--secondary {
+    background: variables.$secondary-color;
+  }
+
+  &--accent {
+    background: variables.$accent-color;
+  }
+  &--outline {
+    background: transparent;
+    border: 1px solid variables.$primary-color;
   }
 }
+
 ```
 
 3. `index.js`
@@ -68,10 +97,10 @@ export { Button };
 export * from './Button';
 ```
 
-Use the component
+Example how to use Button component
 
 ```
-import Button from '@/components/Button';
+import Button from '@/components';
 
 const App = () => {
   return (
