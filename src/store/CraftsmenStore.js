@@ -61,8 +61,8 @@ export const useCraftsmenStore = create((set) => ({
             Array.isArray(c.services) &&
             c.services.some(
               (s) =>
-                typeof s.subCategoryName === 'string' &&
-                s.subCategoryName.toLowerCase() === selectedSubCategory.toLowerCase()
+                typeof s.serviceName === 'string' &&
+                s.serviceName.toLowerCase() === selectedSubCategory.slice(0, -1).toLowerCase()
             )
         );
       }
