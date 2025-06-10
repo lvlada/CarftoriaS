@@ -3,10 +3,11 @@ import { SearchSection } from './SearchSection';
 import { useScroll } from '@/context';
 import { CATEGORIES } from '@/constants';
 import { locationList } from '@/fake_data/locationList';
+import { useCraftsmenStore } from '@/store/CraftsmenStore';
 
 const SearchSectionContainer = () => {
   const { searchSectionRef } = useScroll();
-
+  const filterCraftsmen = useCraftsmenStore((state) => state.filterCraftsmen);
   const [searchItem, setSearchItem] = useState('');
   const [selectedCategory, setSelectedCategory] = useState('');
   const [selectedSubCategory, setSelectedSubCategory] = useState('');
@@ -45,7 +46,12 @@ const SearchSectionContainer = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-
+    filterCraftsmen({
+      searchItem,
+      selectedCategory,
+      selectedSubCategory,
+      selectedLocation
+    });
     console.log({
       searchItem,
       selectedCategory,
