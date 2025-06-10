@@ -10,8 +10,8 @@ The goal of the platform is to allow users to review craftsmen, their services, 
 ## Technologies Used
 
 - **Frontend framework**: React
-- **Styling**: Sass
-- **State management**:
+- **Styling**: Sass(modular approche)
+- **State management**: Zustand
 - **Linting & Formatting**: ESLint and Prettier
 - **Build Tool**: Vite
 - **Package manager**: npm
@@ -22,8 +22,11 @@ The project structure is as follows:
 
 ```
 src/
+  api/           # Endpoints
+  assets/        # Icons and images
   components/    # Reusable components
   providers/     # Providers
+  layout/        # Layout of pages
   pages/         # Pages and their specifics
   routes/        # Routes for the application
   styles/        # Styles for the application
