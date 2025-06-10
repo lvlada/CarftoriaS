@@ -10,8 +10,8 @@ The goal of the platform is to allow users to review craftsmen, their services, 
 ## Technologies Used
 
 - **Frontend framework**: React
-- **Styling**: Sass
-- **State management**:
+- **Styling**: Sass (modular approach)
+- **State management**: Zustand
 - **Linting & Formatting**: ESLint and Prettier
 - **Build Tool**: Vite
 - **Package manager**: npm
@@ -22,16 +22,19 @@ The project structure is as follows:
 
 ```
 src/
+  api/           # Endpoints
+  assets/        # Icons and images
   components/    # Reusable components
   providers/     # Providers
+  layout/        # Layout of pages
   pages/         # Pages and their specifics
   routes/        # Routes for the application
-  styles/        # Styles for the application
+  styles/        # Default styles for the application
   App.jsx        # Main application component
   main.jsx       # Entry point
 ```
 
-Every folder needs to have its `index.js` that will export all files from that folder.
+Each folder should have an `index.js` file that exports all files from that folder
 
 ## Guides to Use
 

@@ -30,16 +30,16 @@ To add a new route, follow these steps:
    ```javascript
    // filepath: \src\routes\AppRouter.jsx
    import { Route, Routes } from 'react-router';
-   import { HomePage } from '@/pages/';
+   import { LoginPage } from '@/pages/';
 
    const AppRouter = () => {
      return (
        <Routes>
-         <Route path="/" element={<HomePage />} />
+         <Route path="/login" element={<LoginPage />} />
        </Routes>
      );
    };
    export { AppRouter };
    ```
 
-4. Navigate to `/` in your browser to see the new page.
+4. Navigate to `/login` in your browser to see the new page.
